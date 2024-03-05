@@ -1,0 +1,1198 @@
+,url,repository_url,labels_url,comments_url,events_url,html_url,id,node_id,number,title,user,labels,state,locked,assignee,assignees,milestone,comments,created_at,updated_at,closed_at,author_association,active_lock_reason,body,reactions,timeline_url,performed_via_github_app,state_reason,draft,pull_request
+0,https://api.github.com/repos/pandas-dev/pandas/issues/57731,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57731/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57731/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57731/events,https://github.com/pandas-dev/pandas/issues/57731,2168136869,I_kwDOAA0YD86BOySl,57731,ENH: interleave_columns function,"{'login': 'raybellwaves', 'id': 17162724, 'node_id': 'MDQ6VXNlcjE3MTYyNzI0', 'avatar_url': 'https://avatars.githubusercontent.com/u/17162724?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/raybellwaves', 'html_url': 'https://github.com/raybellwaves', 'followers_url': 'https://api.github.com/users/raybellwaves/followers', 'following_url': 'https://api.github.com/users/raybellwaves/following{/other_user}', 'gists_url': 'https://api.github.com/users/raybellwaves/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/raybellwaves/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/raybellwaves/subscriptions', 'organizations_url': 'https://api.github.com/users/raybellwaves/orgs', 'repos_url': 'https://api.github.com/users/raybellwaves/repos', 'events_url': 'https://api.github.com/users/raybellwaves/events{/privacy}', 'received_events_url': 'https://api.github.com/users/raybellwaves/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76812, 'node_id': 'MDU6TGFiZWw3NjgxMg==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Enhancement', 'name': 'Enhancement', 'color': '4E9A06', 'default': False, 'description': None}, {'id': 1954720290, 'node_id': 'MDU6TGFiZWwxOTU0NzIwMjkw', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Triage', 'name': 'Needs Triage', 'color': '0052cc', 'default': False, 'description': 'Issue that has not been reviewed by a pandas team member'}]",open,False,,[],,1,2024-03-05T02:15:31Z,2024-03-05T07:18:15Z,,CONTRIBUTOR,,"### Feature Type
+
+- [x] Adding new functionality to pandas
+
+- [ ] Changing existing functionality in pandas
+
+- [ ] Removing existing functionality in pandas
+
+
+### Problem Description
+
+I would like do the equivalent in pandas as `interleave_columns` in cudf (https://docs.rapids.ai/api/cudf/legacy/user_guide/api_docs/api/cudf.dataframe.interleave_columns/)
+
+### Feature Description
+
+Similar to the cudf example
+
+```
+df = pd.DataFrame({0: ['A1', 'A2', 'A3'], 1: ['B1', 'B2', 'B3']})
+df.interleave_columns()
+0    A1
+1    B1
+2    A2
+3    B2
+4    A3
+5    B3
+dtype: object
+```
+
+### Alternative Solutions
+
+https://github.com/rapidsai/cudf/blob/branch-24.04/cpp/src/lists/interleave_columns.cu#L350
+
+I got working with some numpy code but it's currently custom to the number of columns
+```
+pd.Series(np.ravel(np.column_stack((df[0], df[1]))))
+```
+
+### Additional Context
+
+_No response_","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57731/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57731/timeline,,,,
+1,https://api.github.com/repos/pandas-dev/pandas/issues/57730,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57730/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57730/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57730/events,https://github.com/pandas-dev/pandas/pull/57730,2168134519,PR_kwDOAA0YD85oqMeK,57730,Replace khash + tempita with khashl,"{'login': 'WillAyd', 'id': 609873, 'node_id': 'MDQ6VXNlcjYwOTg3Mw==', 'avatar_url': 'https://avatars.githubusercontent.com/u/609873?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/WillAyd', 'html_url': 'https://github.com/WillAyd', 'followers_url': 'https://api.github.com/users/WillAyd/followers', 'following_url': 'https://api.github.com/users/WillAyd/following{/other_user}', 'gists_url': 'https://api.github.com/users/WillAyd/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/WillAyd/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/WillAyd/subscriptions', 'organizations_url': 'https://api.github.com/users/WillAyd/orgs', 'repos_url': 'https://api.github.com/users/WillAyd/repos', 'events_url': 'https://api.github.com/users/WillAyd/events{/privacy}', 'received_events_url': 'https://api.github.com/users/WillAyd/received_events', 'type': 'User', 'site_admin': False}","[{'id': 8935311, 'node_id': 'MDU6TGFiZWw4OTM1MzEx', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Performance', 'name': 'Performance', 'color': 'a10c02', 'default': False, 'description': 'Memory or execution speed performance'}]",open,False,,[],,0,2024-03-05T02:12:42Z,2024-03-05T07:29:51Z,,MEMBER,,"supersedes #56432
+
+this is just a research project at the moment, but the main thing this solves is using templated functions to achieve better code organization and runtime performance, compared to what's in main.
+
+Haven't spent a ton of time optimization but first benchmark run shows factorization of a high cardinality column can be over 2x as fast, though factorizationn of a low cardinality column is 2x as slow.
+
+```sh
+| Change   | Before [58e63ec1] <khashl-usage~7^2>   | After [23fc5842] <khashl-usage>   |   Ratio | Benchmark (Parameter)                                                                        |
+|----------|----------------------------------------|-----------------------------------|---------|----------------------------------------------------------------------------------------------|
+| +        | 1.39±0.04ms                            | 3.05±0.3ms                        |    2.19 | hash_functions.Unique.time_unique_with_duplicates('Int64')                                   |
+| +        | 21.4±0.8μs                             | 40.1±20μs                         |    1.88 | hash_functions.NumericSeriesIndexingShuffled.time_loc_slice(<class 'numpy.float64'>, 10000)  |
+| +        | 2.55±0.09ms                            | 3.96±0.2ms                        |    1.55 | hash_functions.Unique.time_unique('Int64')                                                   |
+| +        | 53.5±3μs                               | 81.6±20μs                         |    1.52 | hash_functions.NumericSeriesIndexingShuffled.time_loc_slice(<class 'numpy.float64'>, 100000) |
+| +        | 3.88±0.3ms                             | 5.85±0.8ms                        |    1.51 | hash_functions.Unique.time_unique_with_duplicates('Float64')                                 |
+| +        | 15.3±0.2μs                             | 17.2±0.6μs                        |    1.12 | hash_functions.NumericSeriesIndexing.time_loc_slice(<class 'numpy.float64'>, 10000)          |
+| -        | 8.46±0.3ms                             | 7.28±0.4ms                        |    0.86 | hash_functions.UniqueAndFactorizeArange.time_unique(5)                                       |
+| -        | 9.01±0.2ms                             | 7.48±0.2ms                        |    0.83 | hash_functions.UniqueAndFactorizeArange.time_unique(15)                                      |
+| -        | 8.68±0.4ms                             | 7.14±0.3ms                        |    0.82 | hash_functions.UniqueAndFactorizeArange.time_unique(4)                                       |
+| -        | 8.84±0.4ms                             | 7.23±0.1ms                        |    0.82 | hash_functions.UniqueAndFactorizeArange.time_unique(9)                                       |
+| -        | 8.86±0.4ms                             | 7.14±0.4ms                        |    0.81 | hash_functions.UniqueAndFactorizeArange.time_unique(11)                                      |
+| -        | 8.76±0.3ms                             | 6.64±0.1ms                        |    0.76 | hash_functions.UniqueAndFactorizeArange.time_unique(8)                                       |
+| -        | 14.4±1ms                               | 7.10±0.8ms                        |    0.49 | hash_functions.UniqueAndFactorizeArange.time_factorize(15)                                   |
+| -        | 14.7±0.9ms                             | 6.66±0.3ms                        |    0.45 | hash_functions.UniqueAndFactorizeArange.time_factorize(10)                                   |
+| -        | 14.7±1ms                               | 6.58±0.1ms                        |    0.45 | hash_functions.UniqueAndFactorizeArange.time_factorize(11)                                   |
+| -        | 15.1±2ms                               | 6.76±0.2ms                        |    0.45 | hash_functions.UniqueAndFactorizeArange.time_factorize(12)                                   |
+| -        | 15.4±1ms                               | 6.95±0.3ms                        |    0.45 | hash_functions.UniqueAndFactorizeArange.time_factorize(7)                                    |
+| -        | 15.2±1ms                               | 6.92±0.4ms                        |    0.45 | hash_functions.UniqueAndFactorizeArange.time_factorize(8)                                    |
+| -        | 14.9±1ms                               | 6.60±0.2ms                        |    0.44 | hash_functions.UniqueAndFactorizeArange.time_factorize(4)                                    |
+| -        | 15.4±1ms                               | 6.69±0.1ms                        |    0.44 | hash_functions.UniqueAndFactorizeArange.time_factorize(5)                                    |
+| -        | 15.3±1ms                               | 6.77±0.2ms                        |    0.44 | hash_functions.UniqueAndFactorizeArange.time_factorize(6)                                    |
+| -        | 15.7±0.8ms                             | 6.27±0.1ms                        |    0.4  | hash_functions.UniqueAndFactorizeArange.time_factorize(9)                                    |
+
+SOME BENCHMARKS HAVE CHANGED SIGNIFICANTLY.
+PERFORMANCE DECREASED.
+
+```","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57730/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57730/timeline,,,True,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57730', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57730', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57730.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57730.patch', 'merged_at': None}"
+2,https://api.github.com/repos/pandas-dev/pandas/issues/57725,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57725/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57725/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57725/events,https://github.com/pandas-dev/pandas/pull/57725,2167293513,PR_kwDOAA0YD85onTyj,57725,[pre-commit.ci] pre-commit autoupdate,"{'login': 'pre-commit-ci[bot]', 'id': 66853113, 'node_id': 'MDM6Qm90NjY4NTMxMTM=', 'avatar_url': 'https://avatars.githubusercontent.com/in/68672?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D', 'html_url': 'https://github.com/apps/pre-commit-ci', 'followers_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/followers', 'following_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/following{/other_user}', 'gists_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/subscriptions', 'organizations_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/orgs', 'repos_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/repos', 'events_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/events{/privacy}', 'received_events_url': 'https://api.github.com/users/pre-commit-ci%5Bbot%5D/received_events', 'type': 'Bot', 'site_admin': False}","[{'id': 106935113, 'node_id': 'MDU6TGFiZWwxMDY5MzUxMTM=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Code%20Style', 'name': 'Code Style', 'color': 'eb6420', 'default': False, 'description': 'Code style, linting, code_checks'}]",open,False,,[],,0,2024-03-04T16:49:11Z,2024-03-05T00:33:21Z,,CONTRIBUTOR,,"<!--pre-commit.ci start-->
+updates:
+- [github.com/astral-sh/ruff-pre-commit: v0.1.13 → v0.3.0](https://github.com/astral-sh/ruff-pre-commit/compare/v0.1.13...v0.3.0)
+- [github.com/jendrikseipp/vulture: v2.10 → v2.11](https://github.com/jendrikseipp/vulture/compare/v2.10...v2.11)
+- [github.com/pylint-dev/pylint: v3.0.1 → v3.1.0](https://github.com/pylint-dev/pylint/compare/v3.0.1...v3.1.0)
+- [github.com/PyCQA/isort: 5.12.0 → 5.13.2](https://github.com/PyCQA/isort/compare/5.12.0...5.13.2)
+- [github.com/asottile/pyupgrade: v3.15.0 → v3.15.1](https://github.com/asottile/pyupgrade/compare/v3.15.0...v3.15.1)
+<!--pre-commit.ci end-->","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57725/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57725/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57725', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57725', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57725.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57725.patch', 'merged_at': None}"
+3,https://api.github.com/repos/pandas-dev/pandas/issues/57724,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57724/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57724/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57724/events,https://github.com/pandas-dev/pandas/issues/57724,2167216233,I_kwDOAA0YD86BLRhp,57724,BUG: to_sql does not get the correct dialect,"{'login': 'sls-mdr', 'id': 50274097, 'node_id': 'MDQ6VXNlcjUwMjc0MDk3', 'avatar_url': 'https://avatars.githubusercontent.com/u/50274097?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/sls-mdr', 'html_url': 'https://github.com/sls-mdr', 'followers_url': 'https://api.github.com/users/sls-mdr/followers', 'following_url': 'https://api.github.com/users/sls-mdr/following{/other_user}', 'gists_url': 'https://api.github.com/users/sls-mdr/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/sls-mdr/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/sls-mdr/subscriptions', 'organizations_url': 'https://api.github.com/users/sls-mdr/orgs', 'repos_url': 'https://api.github.com/users/sls-mdr/repos', 'events_url': 'https://api.github.com/users/sls-mdr/events{/privacy}', 'received_events_url': 'https://api.github.com/users/sls-mdr/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76811, 'node_id': 'MDU6TGFiZWw3NjgxMQ==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Bug', 'name': 'Bug', 'color': 'e10c02', 'default': False, 'description': None}, {'id': 1954720290, 'node_id': 'MDU6TGFiZWwxOTU0NzIwMjkw', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Triage', 'name': 'Needs Triage', 'color': '0052cc', 'default': False, 'description': 'Issue that has not been reviewed by a pandas team member'}]",open,False,,[],,1,2024-03-04T16:13:06Z,2024-03-05T07:39:24Z,,NONE,,"### Pandas version checks
+
+- [X] I have checked that this issue has not already been reported.
+
+- [X] I have confirmed this bug exists on the [latest version](https://pandas.pydata.org/docs/whatsnew/index.html) of pandas.
+
+- [X] I have confirmed this bug exists on the [main branch](https://pandas.pydata.org/docs/dev/getting_started/install.html#installing-the-development-version-of-pandas) of pandas.
+
+
+### Reproducible Example
+
+```python
+import urllib.parse
+
+import pandas as pd
+import sqlalchemy
+
+username = ""SOME_USERNAME""
+password = urllib.parse.quote(""SOME_PASSWORD"")
+host = ""SOME_HOST""
+port = SOME_PORT
+
+# connection to denodo plattform
+conn_str = f""denodo://{username}:{password}@{host}:{port}/dv_tutorial""
+
+print(""________________________"")
+print(conn_str)
+print(type(conn_str))
+
+engine = sqlalchemy.create_engine(conn_str, echo=True)
+
+# read is possible
+result_set = engine.execute(""SELECT * FROM dv_tutorial.test"")
+for row in result_set:
+    print(row)
+
+# write is not possible
+with engine.connect() as conn:
+    print(""BBBBBBBBBBBBBB"")
+    print(type(conn))
+    df1 = pd.DataFrame({""name"": [""User 4"", ""User 5""]})
+    # :arrowdown: this produces the error
+    df1.to_sql(
+        name=""test_table"",
+        schema=""dv_tutorial"",
+        con=conn.connection,
+        index=False,
+    )
+```
+
+
+### Issue Description
+
+We want to connect to denodo Platform and create a table with pd.to_sql(). The output shows in our opinion that it can not get the correct dialect. It tries to check if the table already exists in a SQL Lite DB.
+
+```
+(dbaccess) []$ /bin/python3.11 ./dbaccess/test.py
+________________________
+denodo://SOME_PARAMS/dv_tutorial
+<class 'str'>
+ ./dbaccess/test.py:20: RemovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to ""sqlalchemy<2.0"". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  result_set = engine.execute(""SELECT * FROM dv_tutorial.test"")
+2024-03-04 16:23:16,383 INFO sqlalchemy.engine.Engine select current_schema()
+2024-03-04 16:23:16,383 INFO sqlalchemy.engine.Engine [raw sql] {}
+2024-03-04 16:23:16,428 INFO sqlalchemy.engine.Engine SELECT * FROM dv_tutorial.test
+2024-03-04 16:23:16,429 INFO sqlalchemy.engine.Engine [raw sql] {}
+(1,)
+BBBBBBBBBBBBBB
+<class 'sqlalchemy.engine.base.Connection'>
+ ./dbaccess/test.py:29: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df1.to_sql(
+Traceback (most recent call last):
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/io/sql.py"", line 2672, in execute
+    cur.execute(sql, *args)
+psycopg2.OperationalError: Syntax error: Invalid parameterized expression
+DETAIL:  java.sql.SQLException: Syntax error: Invalid parameterized expression
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File ""/home/s901193/tkdbaccess/silas.py"", line 29, in <module>
+    df1.to_sql(
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/util/_decorators.py"", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/core/generic.py"", line 3084, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/io/sql.py"", line 842, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/io/sql.py"", line 2848, in to_sql
+    table.create()
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/io/sql.py"", line 984, in create
+    if self.exists():
+       ^^^^^^^^^^^^^
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/io/sql.py"", line 970, in exists
+    return self.pd_sql.has_table(self.name, self.schema)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/io/sql.py"", line 2863, in has_table
+    return len(self.execute(query, [name]).fetchall()) > 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/s901193/.local/lib/python3.11/site-packages/pandas/io/sql.py"", line 2684, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': Syntax error: Invalid parameterized expression
+DETAIL:  java.sql.SQLException: Syntax error: Invalid parameterized expression
+```
+
+### Expected Behavior
+
+We want to use pd.to_sql() to write a table into denodo plattform and use the dialect from the string.
+
+### Installed Versions
+
+<details>
+
+INSTALLED VERSIONS
+------------------
+commit                : bdc79c146c2e32f2cab629be240f01658cfb6cc2
+python                : 3.11.5.final.0
+python-bits           : 64
+OS                    : Linux
+OS-release            : 4.18.0-513.11.1.el8_9.x86_64
+Version               : #1 SMP Thu Dec 7 03:06:13 EST 2023
+machine               : x86_64
+processor             : x86_64
+byteorder             : little
+LC_ALL                : None
+LANG                  : en_US.UTF-8
+LOCALE                : en_US.UTF-8
+
+pandas                : 2.2.1
+numpy                 : 1.26.4
+pytz                  : 2024.1
+dateutil              : 2.9.0.post0
+setuptools            : 69.0.3
+pip                   : 24.0
+Cython                : None
+pytest                : 8.0.2
+hypothesis            : None
+sphinx                : None
+blosc                 : None
+feather               : None
+xlsxwriter            : None
+lxml.etree            : None
+html5lib              : None
+pymysql               : None
+psycopg2              : 2.9.9
+jinja2                : None
+IPython               : None
+pandas_datareader     : None
+adbc-driver-postgresql: None
+adbc-driver-sqlite    : None
+bs4                   : None
+bottleneck            : None
+dataframe-api-compat  : None
+fastparquet           : None
+fsspec                : None
+gcsfs                 : None
+matplotlib            : None
+numba                 : None
+numexpr               : None
+odfpy                 : None
+openpyxl              : None
+pandas_gbq            : None
+pyarrow               : None
+pyreadstat            : None
+python-calamine       : None
+pyxlsb                : None
+s3fs                  : None
+scipy                 : None
+sqlalchemy            : None
+tables                : None
+tabulate              : None
+xarray                : None
+xlrd                  : None
+zstandard             : None
+tzdata                : 2024.1
+qtpy                  : None
+pyqt5                 : None
+</details>
+
+
+AND pip list 
+
+Package           Version
+----------------- -----------
+denodo-sqlalchemy 20240229
+greenlet          3.0.3
+hdbcli            2.19.21
+numpy             1.26.4
+pandas            2.2.1
+pip               23.3.1
+polars            0.20.13
+psycopg2-binary   2.9.9
+pyarrow           15.0.0
+python-dateutil   2.9.0.post0
+pytz              2024.1
+setuptools        69.0.2
+six               1.16.0
+SQLAlchemy        1.4.51
+sqlalchemy-hana   1.3.0
+typing_extensions 4.10.0
+tzdata            2024.1
+wheel             0.42.0","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57724/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57724/timeline,,,,
+4,https://api.github.com/repos/pandas-dev/pandas/issues/57723,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57723/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57723/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57723/events,https://github.com/pandas-dev/pandas/issues/57723,2167029070,I_kwDOAA0YD86BKj1O,57723,"BUG: fillna() doesn't work with `value=None` without method specified, but method is deprecated","{'login': 'Dr-Irv', 'id': 15113894, 'node_id': 'MDQ6VXNlcjE1MTEzODk0', 'avatar_url': 'https://avatars.githubusercontent.com/u/15113894?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/Dr-Irv', 'html_url': 'https://github.com/Dr-Irv', 'followers_url': 'https://api.github.com/users/Dr-Irv/followers', 'following_url': 'https://api.github.com/users/Dr-Irv/following{/other_user}', 'gists_url': 'https://api.github.com/users/Dr-Irv/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/Dr-Irv/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/Dr-Irv/subscriptions', 'organizations_url': 'https://api.github.com/users/Dr-Irv/orgs', 'repos_url': 'https://api.github.com/users/Dr-Irv/repos', 'events_url': 'https://api.github.com/users/Dr-Irv/events{/privacy}', 'received_events_url': 'https://api.github.com/users/Dr-Irv/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76811, 'node_id': 'MDU6TGFiZWw3NjgxMQ==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Bug', 'name': 'Bug', 'color': 'e10c02', 'default': False, 'description': None}, {'id': 2822342, 'node_id': 'MDU6TGFiZWwyODIyMzQy', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Missing-data', 'name': 'Missing-data', 'color': 'd7e102', 'default': False, 'description': 'np.nan, pd.NaT, pd.NA, dropna, isnull, interpolate'}, {'id': 1954720290, 'node_id': 'MDU6TGFiZWwxOTU0NzIwMjkw', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Triage', 'name': 'Needs Triage', 'color': '0052cc', 'default': False, 'description': 'Issue that has not been reviewed by a pandas team member'}]",open,False,,[],,4,2024-03-04T14:49:11Z,2024-03-04T21:44:39Z,,CONTRIBUTOR,,"### Pandas version checks
+
+- [X] I have checked that this issue has not already been reported.
+
+- [X] I have confirmed this bug exists on the [latest version](https://pandas.pydata.org/docs/whatsnew/index.html) of pandas.
+
+- [X] I have confirmed this bug exists on the [main branch](https://pandas.pydata.org/docs/dev/getting_started/install.html#installing-the-development-version-of-pandas) of pandas.
+
+
+### Reproducible Example
+
+```python
+>>> s = pd.Series([1,None,3])
+>>> s
+0    1.0
+1    NaN
+2    3.0
+dtype: float64
+>>> s.fillna()
+Traceback (most recent call last):
+  File ""<stdin>"", line 1, in <module>
+  File ""C:\Code\pandas_dev\pandas\pandas\core\generic.py"", line 6887, in fillna
+    value, method = validate_fillna_kwargs(value, method)
+  File ""C:\Code\pandas_dev\pandas\pandas\util\_validators.py"", line 293, in validate_fillna_kwargs
+    raise ValueError(""Must specify a fill 'value' or 'method'."")
+ValueError: Must specify a fill 'value' or 'method'.
+>>> s.fillna(value=None, method=""ffill"")
+<stdin>:1: FutureWarning: Series.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+0    1.0
+1    1.0
+2    3.0
+dtype: float64
+```
+
+
+### Issue Description
+
+The `method` parameter is deprecated in version 2.1.  But the docs for `Series.fillna()` indicate that a value of `None` is valid.  So you can't do a `fillna()` with a value of `None`
+
+
+### Expected Behavior
+
+Unclear.  Do we want to allow `None` as the possible value in fillna()?  This could be a docs issue or a code issue.
+
+
+### Installed Versions
+
+<details>
+
+INSTALLED VERSIONS
+------------------
+commit                : fd3f57170aa1af588ba877e8e28c158a20a4886d
+python                : 3.10.13.final.0
+python-bits           : 64
+OS                    : Linux
+OS-release            : 4.4.0-19041-Microsoft
+Version               : #3996-Microsoft Thu Jan 18 16:36:00 PST 2024
+machine               : x86_64
+processor             : x86_64
+byteorder             : little
+LC_ALL                : None
+LANG                  : C.UTF-8
+LOCALE                : en_US.UTF-8
+
+pandas                : 2.2.0
+numpy                 : 1.26.4
+pytz                  : 2024.1
+dateutil              : 2.8.2
+setuptools            : 69.1.0
+pip                   : 23.2.1
+Cython                : None
+pytest                : 8.0.1
+hypothesis            : None
+sphinx                : None
+blosc                 : None
+feather               : None
+xlsxwriter            : None
+lxml.etree            : None
+html5lib              : None
+pymysql               : None
+psycopg2              : None
+jinja2                : None
+IPython               : None
+pandas_datareader     : None
+adbc-driver-postgresql: None
+adbc-driver-sqlite    : None
+bs4                   : None
+bottleneck            : None
+dataframe-api-compat  : None
+fastparquet           : None
+fsspec                : None
+gcsfs                 : None
+matplotlib            : None
+numba                 : None
+numexpr               : None
+odfpy                 : None
+openpyxl              : None
+pandas_gbq            : None
+pyarrow               : None
+pyreadstat            : None
+python-calamine       : None
+pyxlsb                : None
+s3fs                  : None
+scipy                 : None
+sqlalchemy            : None
+tables                : None
+tabulate              : None
+xarray                : None
+xlrd                  : None
+zstandard             : None
+tzdata                : 2024.1
+qtpy                  : None
+pyqt5                 : None
+</details>
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57723/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57723/timeline,,,,
+5,https://api.github.com/repos/pandas-dev/pandas/issues/57722,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57722/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57722/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57722/events,https://github.com/pandas-dev/pandas/issues/57722,2166895740,I_kwDOAA0YD86BKDR8,57722,DOC: SQL-style join conditions,"{'login': 'jxu', 'id': 7989982, 'node_id': 'MDQ6VXNlcjc5ODk5ODI=', 'avatar_url': 'https://avatars.githubusercontent.com/u/7989982?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/jxu', 'html_url': 'https://github.com/jxu', 'followers_url': 'https://api.github.com/users/jxu/followers', 'following_url': 'https://api.github.com/users/jxu/following{/other_user}', 'gists_url': 'https://api.github.com/users/jxu/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/jxu/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/jxu/subscriptions', 'organizations_url': 'https://api.github.com/users/jxu/orgs', 'repos_url': 'https://api.github.com/users/jxu/repos', 'events_url': 'https://api.github.com/users/jxu/events{/privacy}', 'received_events_url': 'https://api.github.com/users/jxu/received_events', 'type': 'User', 'site_admin': False}","[{'id': 134699, 'node_id': 'MDU6TGFiZWwxMzQ2OTk=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Docs', 'name': 'Docs', 'color': '3465A4', 'default': False, 'description': None}, {'id': 1954720290, 'node_id': 'MDU6TGFiZWwxOTU0NzIwMjkw', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Triage', 'name': 'Needs Triage', 'color': '0052cc', 'default': False, 'description': 'Issue that has not been reviewed by a pandas team member'}]",open,False,,[],,3,2024-03-04T13:49:30Z,2024-03-05T02:05:51Z,,NONE,,"### Pandas version checks
+
+- [X] I have checked that the issue still exists on the latest versions of the docs on `main` [here](https://pandas.pydata.org/docs/dev/)
+
+
+### Location of the documentation
+
+https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_sql.html
+
+### Documentation problem
+
+Not described how to do more complicated SQL-like joins on conditions, such as 
+```sql
+SELECT *
+FROM A
+LEFT JOIN B
+  ON A.key = B.key AND A.a >= B.b 
+```
+
+### Suggested fix for documentation
+
+Something from https://stackoverflow.com/questions/23508351/how-to-do-workaround-a-conditional-join-in-python-pandas
+
+This is a common operation and a canonical answer is useful","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57722/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57722/timeline,,,,
+6,https://api.github.com/repos/pandas-dev/pandas/issues/57717,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57717/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57717/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57717/events,https://github.com/pandas-dev/pandas/issues/57717,2166644671,I_kwDOAA0YD86BJF-_,57717,BUILD: error: metadata-generation-failed; ninja: build stopped: subcommand failed.,"{'login': 'Rand-0', 'id': 60578707, 'node_id': 'MDQ6VXNlcjYwNTc4NzA3', 'avatar_url': 'https://avatars.githubusercontent.com/u/60578707?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/Rand-0', 'html_url': 'https://github.com/Rand-0', 'followers_url': 'https://api.github.com/users/Rand-0/followers', 'following_url': 'https://api.github.com/users/Rand-0/following{/other_user}', 'gists_url': 'https://api.github.com/users/Rand-0/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/Rand-0/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/Rand-0/subscriptions', 'organizations_url': 'https://api.github.com/users/Rand-0/orgs', 'repos_url': 'https://api.github.com/users/Rand-0/repos', 'events_url': 'https://api.github.com/users/Rand-0/events{/privacy}', 'received_events_url': 'https://api.github.com/users/Rand-0/received_events', 'type': 'User', 'site_admin': False}","[{'id': 129350, 'node_id': 'MDU6TGFiZWwxMjkzNTA=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Build', 'name': 'Build', 'color': '75507B', 'default': False, 'description': 'Library building on various platforms'}, {'id': 307649777, 'node_id': 'MDU6TGFiZWwzMDc2NDk3Nzc=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Info', 'name': 'Needs Info', 'color': '207de5', 'default': False, 'description': 'Clarification about behavior needed to assess issue'}]",open,False,,[],,3,2024-03-04T11:44:15Z,2024-03-05T03:45:38Z,,NONE,,"### Installation check
+
+- [X] I have read the [installation guide](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html#installing-pandas).
+
+
+### Platform
+
+Windows-10-10.0.19045-SP0
+
+### Installation Method
+
+pip install
+
+### pandas Version
+
+2.2.1
+
+### Python Version
+
+3.9
+
+### Installation Logs
+
+<details>
+
+Collecting pandas
+  Using cached pandas-2.2.1.tar.gz (4.4 MB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... error
+  error: subprocess-exited-with-error
+
+  × Preparing metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [81 lines of output]
+      + meson setup C:\Users\kacpe\AppData\Local\Temp\pip-install-iagl7i7u\pandas_e56223d9bb2546b6958431903a3af4f1 C:\Users\kacpe\AppData\Local\Temp\pip-install-iagl7i7u\pandas_e56223d9bb2546b6958431903a3af4f1\.mesonpy-uiyqxkyb\build -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md --vsenv --native-fi
+le=C:\Users\kacpe\AppData\Local\Temp\pip-install-iagl7i7u\pandas_e56223d9bb2546b6958431903a3af4f1\.mesonpy-uiyqxkyb\build\meson-python-native-file.ini
+      The Meson build system
+      Version: 1.2.1
+      Source dir: C:\Users\kacpe\AppData\Local\Temp\pip-install-iagl7i7u\pandas_e56223d9bb2546b6958431903a3af4f1
+      Build dir: C:\Users\kacpe\AppData\Local\Temp\pip-install-iagl7i7u\pandas_e56223d9bb2546b6958431903a3af4f1\.mesonpy-uiyqxkyb\build
+      Build type: native build
+      Project name: pandas
+      Project version: 2.2.1
+      Activating VS 17.9.2
+      C compiler for the host machine: cl (msvc 19.39.33521 ""Microsoft (R) C/C++ wersja kompilatora optymalizujĄcego 19.39.33521 dla x64"")
+      C linker for the host machine: link link 14.39.33521.0
+      C++ compiler for the host machine: cl (msvc 19.39.33521 ""Microsoft (R) C/C++ wersja kompilatora optymalizujĄcego 19.39.33521 dla x64"")
+      C++ linker for the host machine: link link 14.39.33521.0
+      Cython compiler for the host machine: cython (cython 3.0.5)
+      Host machine cpu family: x86_64
+      Host machine cpu: x86_64
+      Program python found: YES (D:\python\Lion\venv\bin\python.exe)
+      Found pkg-config: d:\msys\mingw64\bin\pkg-config.EXE (1.8.0)
+      Run-time dependency python found: YES 3.10
+      Build targets in project: 53
+     
+      pandas 2.2.1
+     
+        User defined options
+          Native files: C:\Users\kacpe\AppData\Local\Temp\pip-install-iagl7i7u\pandas_e56223d9bb2546b6958431903a3af4f1\.mesonpy-uiyqxkyb\build\meson-python-native-file.ini
+          buildtype   : release
+          vsenv       : True
+          b_ndebug    : if-release
+          b_vscrt     : md
+     
+      Found ninja.EXE-1.11.1.git.kitware.jobserver-1 at C:\Users\kacpe\AppData\Local\Temp\pip-build-env-wfo92fd8\normal\bin\ninja.EXE
+     
+      Visual Studio environment is needed to run Ninja. It is recommended to use Meson wrapper:
+      D:\python\Lion\venv\bin\meson compile -C .
+      + meson compile
+      [1/151] Generating pandas/_libs/algos_take_helper_pxi with a custom command
+      [2/151] Generating pandas/_libs/algos_common_helper_pxi with a custom command
+      [3/151] Generating pandas/_libs/khash_primitive_helper_pxi with a custom command
+      [4/151] Generating pandas/_libs/hashtable_class_helper_pxi with a custom command
+      [5/151] Generating pandas/_libs/hashtable_func_helper_pxi with a custom command
+      [6/151] Generating pandas/_libs/index_class_helper_pxi with a custom command
+      [7/151] Generating pandas/_libs/sparse_op_helper_pxi with a custom command
+      [8/151] Generating pandas/_libs/intervaltree_helper_pxi with a custom command
+      [9/151] Generating pandas/__init__.py with a custom command
+      [10/151] Compiling C object pandas/_libs/tslibs/parsing.cp310-mingw_x86_64.pyd.p/.._src_parser_tokenizer.c.obj
+      FAILED: pandas/_libs/tslibs/parsing.cp310-mingw_x86_64.pyd.p/.._src_parser_tokenizer.c.obj
+      ""cl"" ""-Ipandas\_libs\tslibs\parsing.cp310-mingw_x86_64.pyd.p"" ""-Ipandas\_libs\tslibs"" ""-I..\..\pandas\_libs\tslibs"" ""-I..\..\..\..\pip-build-env-wfo92fd8\overlay\lib\python3.10\site-packages\numpy\core\include"" ""-I..\..\pandas\_libs\include"" ""-Id:/msys/mingw64/bin/../include/python3.10"" ""-DNDEBUG"" ""/M
+D"" ""/nologo"" ""/showIncludes"" ""/utf-8"" ""/W3"" ""/std:c11"" ""/O2"" ""/Gw"" ""-DNPY_NO_DEPRECATED_API=0"" ""-DNPY_TARGET_VERSION=NPY_1_21_API_VERSION"" ""/Fdpandas\_libs\tslibs\parsing.cp310-mingw_x86_64.pyd.p\.._src_parser_tokenizer.c.pdb"" /Fopandas/_libs/tslibs/parsing.cp310-mingw_x86_64.pyd.p/.._src_parser_tokenizer.c
+.obj ""/c"" ../../pandas/_libs/src/parser/tokenizer.c
+      d:/msys/mingw64/bin/../include/python3.10\Python.h(36): fatal error C1083: Nie moľna otworzy† pliku do\x88Ącz: 'unistd.h': No such file or directory
+      [11/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/indexing.pyx
+      [12/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/base.pyx
+      [13/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/ccalendar.pyx
+      [14/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/dtypes.pyx
+      [15/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/nattype.pyx
+      warning: C:\Users\kacpe\AppData\Local\Temp\pip-install-iagl7i7u\pandas_e56223d9bb2546b6958431903a3af4f1\pandas\_libs\tslibs\nattype.pyx:79:0: Global name __nat_unpickle matched from within class scope in contradiction to to Python 'class private name' rules. This may change in a future release.       
+      warning: C:\Users\kacpe\AppData\Local\Temp\pip-install-iagl7i7u\pandas_e56223d9bb2546b6958431903a3af4f1\pandas\_libs\tslibs\nattype.pyx:79:0: Global name __nat_unpickle matched from within class scope in contradiction to to Python 'class private name' rules. This may change in a future release.       
+     
+      [16/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/np_datetime.pyx
+      [17/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/arrays.pyx
+      [18/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/hashing.pyx
+      [19/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/vectorized.pyx
+      [20/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/timezones.pyx
+      [21/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/fields.pyx
+      [22/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/tzconversion.pyx
+      [23/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/internals.pyx
+      [24/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/parsing.pyx
+      [25/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/conversion.pyx
+      [27/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/timestamps.pyx
+      [28/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/timedeltas.pyx
+      [29/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/period.pyx
+      [30/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/tslibs/offsets.pyx
+      [31/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/index.pyx
+      [32/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/interval.pyx
+      [33/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/hashtable.pyx
+      [34/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/algos.pyx
+      [35/151] Compiling Cython source C:/Users/kacpe/AppData/Local/Temp/pip-install-iagl7i7u/pandas_e56223d9bb2546b6958431903a3af4f1/pandas/_libs/groupby.pyx
+      ninja: build stopped: subcommand failed.
+      Activating VS 17.9.2
+      INFO: automatically activated MSVC compiler environment
+      INFO: autodetecting backend as ninja
+      INFO: calculating backend command to run: C:\Users\kacpe\AppData\Local\Temp\pip-build-env-wfo92fd8\normal\bin\ninja.EXE
+      [end of output]
+
+
+</details>
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57717/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57717/timeline,,,,
+7,https://api.github.com/repos/pandas-dev/pandas/issues/57716,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57716/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57716/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57716/events,https://github.com/pandas-dev/pandas/issues/57716,2165790488,I_kwDOAA0YD86BF1cY,57716,Pandas Extension: Drop Duplicated Columns,"{'login': 'kanhapatil', 'id': 101468170, 'node_id': 'U_kgDOBgxICg', 'avatar_url': 'https://avatars.githubusercontent.com/u/101468170?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kanhapatil', 'html_url': 'https://github.com/kanhapatil', 'followers_url': 'https://api.github.com/users/kanhapatil/followers', 'following_url': 'https://api.github.com/users/kanhapatil/following{/other_user}', 'gists_url': 'https://api.github.com/users/kanhapatil/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kanhapatil/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kanhapatil/subscriptions', 'organizations_url': 'https://api.github.com/users/kanhapatil/orgs', 'repos_url': 'https://api.github.com/users/kanhapatil/repos', 'events_url': 'https://api.github.com/users/kanhapatil/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kanhapatil/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76812, 'node_id': 'MDU6TGFiZWw3NjgxMg==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Enhancement', 'name': 'Enhancement', 'color': '4E9A06', 'default': False, 'description': None}, {'id': 1954720290, 'node_id': 'MDU6TGFiZWwxOTU0NzIwMjkw', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Triage', 'name': 'Needs Triage', 'color': '0052cc', 'default': False, 'description': 'Issue that has not been reviewed by a pandas team member'}]",open,False,,[],,1,2024-03-04T02:39:48Z,2024-03-04T02:42:38Z,,NONE,,"### Feature Type
+
+- [X] Adding new functionality to pandas
+
+- [ ] Changing existing functionality in pandas
+
+- [ ] Removing existing functionality in pandas
+
+
+### Problem Description
+
+When working with datasets in pandas, users often encounter the need to identify and handle duplicated columns. The presence of duplicated columns can complicate data analysis, lead to redundancy, and affect computational efficiency. Currently, pandas lacks a built-in method to easily drop duplicated columns from a DataFrame.
+
+### Feature Description
+
+The proposed feature introduces a new functionality to pandas, enabling users to drop duplicated columns from a DataFrame effortlessly. This is achieved through the addition of a drop_duplicated_columns method within a new class named DuplicateCols.
+
+### Alternative Solutions
+
+import pandas as pd
+
+data = pd.DataFrame({
+    'A' : [1,2,3,4,5],
+    'B' : [10,20,30,40,50],
+    'C' : [2,4,6,8,10],
+    'D' : [10,20,30,40,50],
+    'E' : [1,2,3,4,5],
+    'F' : [1,2,3,4,5],
+})
+
+class DuplicateCols:
+    def __init__(self, dataset):
+        self.temp = set()
+        self.dupCols = []
+        self.nonDupCols = []
+        self.compareCols = []
+        self.dataset = dataset
+
+    def duplicateColumns(self):
+        for col in self.dataset.columns:
+            col_data = tuple(self.dataset[col])
+            if col_data in self.temp:
+                self.dupCols.append(col)
+            else:
+                self.temp.add(col_data)
+                self.nonDupCols.append(col)
+        return self.dupCols
+
+    def nonDuplicateColumns(self):
+        self.duplicateColumns()
+        return self.nonDupCols
+
+    def dropDuplicateColumns(self):
+        self.duplicateColumns()
+        return self.dataset[self.nonDupCols]
+
+# Example Usage:
+duplicates = DuplicateCols(data)
+print(""Duplicated Columns:"", duplicates.duplicateColumns())
+print(""Non-Duplicated Columns:"", duplicates.nonDuplicateColumns())
+result_df = duplicates.dropDuplicateColumns()
+print(""DataFrame after dropping duplicated columns:"")
+print(result_df)
+
+
+### Additional Context
+
+_No response_","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57716/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57716/timeline,,,,
+8,https://api.github.com/repos/pandas-dev/pandas/issues/57713,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57713/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57713/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57713/events,https://github.com/pandas-dev/pandas/pull/57713,2165418794,PR_kwDOAA0YD85og6qV,57713,BUG: Line plots aligned from start #57594,"{'login': 'NoelMT', 'id': 58369280, 'node_id': 'MDQ6VXNlcjU4MzY5Mjgw', 'avatar_url': 'https://avatars.githubusercontent.com/u/58369280?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/NoelMT', 'html_url': 'https://github.com/NoelMT', 'followers_url': 'https://api.github.com/users/NoelMT/followers', 'following_url': 'https://api.github.com/users/NoelMT/following{/other_user}', 'gists_url': 'https://api.github.com/users/NoelMT/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/NoelMT/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/NoelMT/subscriptions', 'organizations_url': 'https://api.github.com/users/NoelMT/orgs', 'repos_url': 'https://api.github.com/users/NoelMT/repos', 'events_url': 'https://api.github.com/users/NoelMT/events{/privacy}', 'received_events_url': 'https://api.github.com/users/NoelMT/received_events', 'type': 'User', 'site_admin': False}",[],open,False,,[],,0,2024-03-03T15:34:23Z,2024-03-04T12:44:09Z,,NONE,,"#57594 BUG: df.plot makes a shift to the right if frequency multiplies to n > 1
+
+The cause of this bug is that by default all elements are generated to align to the end of
+a period instead of at the start and the period technically does not end at the start of
+the last period but rather just before the period subsequent to the last period. To fix this
+problem we therefore passed a parameter stating that the elements should be aligned to
+the start of the period instead of the end. Parameter ""how=S"" was added in pandas/plotting/_matplotlib/timeseries.py::maybe_convert_index(), 
+on the function call data.index.asfreq(freq=freq_str, how = ""S"").  
+
+Additional tests were added to test whether input data match data in plot and one test was merged into one the added test to reduce code duplication. ","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57713/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57713/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57713', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57713', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57713.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57713.patch', 'merged_at': None}"
+9,https://api.github.com/repos/pandas-dev/pandas/issues/57712,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57712/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57712/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57712/events,https://github.com/pandas-dev/pandas/issues/57712,2165342657,I_kwDOAA0YD86BEIHB,57712,Potential regression induced by PR #57588,"{'login': 'DeaMariaLeon', 'id': 11835246, 'node_id': 'MDQ6VXNlcjExODM1MjQ2', 'avatar_url': 'https://avatars.githubusercontent.com/u/11835246?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/DeaMariaLeon', 'html_url': 'https://github.com/DeaMariaLeon', 'followers_url': 'https://api.github.com/users/DeaMariaLeon/followers', 'following_url': 'https://api.github.com/users/DeaMariaLeon/following{/other_user}', 'gists_url': 'https://api.github.com/users/DeaMariaLeon/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/DeaMariaLeon/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/DeaMariaLeon/subscriptions', 'organizations_url': 'https://api.github.com/users/DeaMariaLeon/orgs', 'repos_url': 'https://api.github.com/users/DeaMariaLeon/repos', 'events_url': 'https://api.github.com/users/DeaMariaLeon/events{/privacy}', 'received_events_url': 'https://api.github.com/users/DeaMariaLeon/received_events', 'type': 'User', 'site_admin': False}","[{'id': 732775912, 'node_id': 'MDU6TGFiZWw3MzI3NzU5MTI=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Benchmark', 'name': 'Benchmark', 'color': 'ae68cc', 'default': False, 'description': 'Performance (ASV) benchmarks'}]",open,False,,[],,1,2024-03-03T12:50:21Z,2024-03-03T19:29:40Z,,MEMBER,,"
+PR #57588
+
+If this is expected please ignore this issue. 
+
+The largest regressions seem to be the benchmarks bellow. 
+edit: the names of all the benchmarks with links to their plot are in the attached file.
+
+`series_methods.Dropna.time_dropna` (Python) with dtype='datetime'
+`groupby.GroupByMethods.time_dtype_as_field` (Python) with application='direct', dtype='int16', method='head', ncols=1, param5='cython'
+`groupby.Nth.time_series_nth_all` (Python) with dtype='datetime'
+
+@mroeschke
+
+[cleaned_regression_file.json](https://github.com/pandas-dev/pandas/files/14473488/cleaned_regression_file.json)
+
+
+![Screenshot 2024-03-03 at 13 26 15](https://github.com/pandas-dev/pandas/assets/11835246/8f8432af-42b5-42e4-827e-a8805bd28e59)
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57712/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57712/timeline,,,,
+10,https://api.github.com/repos/pandas-dev/pandas/issues/57710,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57710/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57710/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57710/events,https://github.com/pandas-dev/pandas/pull/57710,2165021095,PR_kwDOAA0YD85ofn8l,57710,REF: Remove dynamic docstrings from option methods,"{'login': 'mroeschke', 'id': 10647082, 'node_id': 'MDQ6VXNlcjEwNjQ3MDgy', 'avatar_url': 'https://avatars.githubusercontent.com/u/10647082?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/mroeschke', 'html_url': 'https://github.com/mroeschke', 'followers_url': 'https://api.github.com/users/mroeschke/followers', 'following_url': 'https://api.github.com/users/mroeschke/following{/other_user}', 'gists_url': 'https://api.github.com/users/mroeschke/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/mroeschke/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/mroeschke/subscriptions', 'organizations_url': 'https://api.github.com/users/mroeschke/orgs', 'repos_url': 'https://api.github.com/users/mroeschke/repos', 'events_url': 'https://api.github.com/users/mroeschke/events{/privacy}', 'received_events_url': 'https://api.github.com/users/mroeschke/received_events', 'type': 'User', 'site_admin': False}","[{'id': 127681, 'node_id': 'MDU6TGFiZWwxMjc2ODE=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Refactor', 'name': 'Refactor', 'color': 'FCE94F', 'default': False, 'description': 'Internal refactoring of code'}]",open,False,,[],,0,2024-03-02T23:09:36Z,2024-03-05T03:06:26Z,,MEMBER,,"xref https://github.com/pandas-dev/pandas/issues/57578#issuecomment-1960937283
+
+These methods have complex docstrings in an attempt to display all option within the docstring. This makes these docstrings hard to automatically validate and [renders the internal implementation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.describe_option.html#pandas.describe_option) in Sphinx. I think it's reasonable to link to the docs where all the options are listed instead.
+
+Additionally did some cleanups removing `silent` from some of these methods by instead catching warnings where needed
+
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57710/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57710/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57710', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57710', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57710.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57710.patch', 'merged_at': None}"
+11,https://api.github.com/repos/pandas-dev/pandas/issues/57709,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57709/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57709/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57709/events,https://github.com/pandas-dev/pandas/issues/57709,2165019795,I_kwDOAA0YD86BC5ST,57709,BUG: Boxplot does not apply colors set by Matplotlib rcParams for certain plot elements,"{'login': 'thetestspecimen', 'id': 40262729, 'node_id': 'MDQ6VXNlcjQwMjYyNzI5', 'avatar_url': 'https://avatars.githubusercontent.com/u/40262729?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/thetestspecimen', 'html_url': 'https://github.com/thetestspecimen', 'followers_url': 'https://api.github.com/users/thetestspecimen/followers', 'following_url': 'https://api.github.com/users/thetestspecimen/following{/other_user}', 'gists_url': 'https://api.github.com/users/thetestspecimen/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/thetestspecimen/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/thetestspecimen/subscriptions', 'organizations_url': 'https://api.github.com/users/thetestspecimen/orgs', 'repos_url': 'https://api.github.com/users/thetestspecimen/repos', 'events_url': 'https://api.github.com/users/thetestspecimen/events{/privacy}', 'received_events_url': 'https://api.github.com/users/thetestspecimen/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76811, 'node_id': 'MDU6TGFiZWw3NjgxMQ==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Bug', 'name': 'Bug', 'color': 'e10c02', 'default': False, 'description': None}, {'id': 1954720290, 'node_id': 'MDU6TGFiZWwxOTU0NzIwMjkw', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Triage', 'name': 'Needs Triage', 'color': '0052cc', 'default': False, 'description': 'Issue that has not been reviewed by a pandas team member'}]",open,False,,[],,0,2024-03-02T23:04:34Z,2024-03-02T23:18:30Z,,NONE,,"### Pandas version checks
+
+- [X] I have checked that this issue has not already been reported.
+
+- [X] I have confirmed this bug exists on the [latest version](https://pandas.pydata.org/docs/whatsnew/index.html) of pandas.
+
+- [X] I have confirmed this bug exists on the [main branch](https://pandas.pydata.org/docs/dev/getting_started/install.html#installing-the-development-version-of-pandas) of pandas.
+
+
+### Reproducible Example
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+df = pd.DataFrame(np.random.default_rng(12).random((10, 2)))
+with mpl.rc_context({'boxplot.boxprops.color': 'red',
+                     'boxplot.whiskerprops.color': 'green',
+                     'boxplot.capprops.color': 'orange',
+                     'boxplot.medianprops.color': 'cyan',
+                     'patch.facecolor': 'grey'}):
+    df.plot.box(patch_artist=True) # OR df.plot(kind='box', patch_artist=True)
+    plt.show()
+```
+
+
+### Issue Description
+
+If the 'Reproducible Example' code is run it will result in the following:
+
+![pandas-example](https://github.com/pandas-dev/pandas/assets/40262729/f37f4507-2715-4962-b4ec-d9446014093d)
+
+If run directly through Matplotlib like so:
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+df = pd.DataFrame(np.random.default_rng(12).random((10, 2)))
+with mpl.rc_context({'boxplot.boxprops.color': 'red',
+                     'boxplot.whiskerprops.color': 'green',
+                     'boxplot.capprops.color': 'orange',
+                     'boxplot.medianprops.color': 'cyan',
+                     'patch.facecolor': 'grey'}):
+    plt.boxplot(df, patch_artist=True)
+    plt.show()
+```
+You end up with this:
+
+![matplotlib-example](https://github.com/pandas-dev/pandas/assets/40262729/6f456b59-b8f9-48b1-b008-46091291660d)
+
+As you can see Pandas completely ignores the rcParams assignment, and sets it's own colours. 
+
+I have only included in this example the exact elements (box, whiskers, caps, medians and box-face) that are ignored. It should also be noted that as the rcParams are ignored, Matplotlib stylesheets are also ignored if applied to these elements.
+
+As Pandas does this **only** for these specific elements in the boxplot, it can result in some terrible looking plots if someone uses a comprehensive set of rcParams (or stylesheet) that have a significantly different set of colours.
+
+### A solution?
+
+I have looked into where this occurs, and all the relevant code resides in:
+
+https://github.com/pandas-dev/pandas/blob/main/pandas/plotting/_matplotlib/boxplot.py
+
+Specifically, methods `_get_colors()`  and `_color_attrs(self)`. These two methods (among other bits of linked code) basically pick specific colours from the assigned colormap and apply them to the plot.
+
+I know what needs adjusting, and could put in a PR. However, due to the nature of rcParams being the ""default"" and hence having the lowest priority in terms of application, I see no way to adjust the code without changing the current default colours (i.e. blue, and a green median taken from the ""tab10"" colormap). 
+
+That is why I am filing this 'bug', as I can see this change might be objectionable, and as such will require further discussion on the appropriate solution. The solution I am proposing, of using matplotlib rcParam defaults, would result in the following ""default"" plot:
+
+![matplotlib-default](https://github.com/pandas-dev/pandas/assets/40262729/6d2af3ab-a99d-459c-84d5-1e072d2b8d94)
+
+My personal opinion is that this visual change is minor, and therefore should be implemented. I would also argue that accessibility is hindered by the current implementation (colour blindness being an example). 
+
+### Items to note
+
+While reviewing the code I noticed the following:
+
+1.  #40769 is not completely solved as it was only fixed for the method `plot.box` and not `boxplot` (the two methods use different code within `boxplot.py`) - see line 376 of `boxplot.py` for the hardcoded black value for the caps using the method `boxplot` `result = np.append(result, ""k"")`
+2.  the section of code refactored by #30346 does not distinguish between `edgecolor` and `facecolor` when `patch_artist` is set to `True`. This may or may not have been intentional, but should probably be separated out as it is the only reason `patch.facecolor` features this current bug report. 
+
+
+
+
+### Expected Behavior
+
+If colours are set in matplotlib rcParams (or stylesheets) by the user, they should be applied to the plot, not ignored. 
+
+### Installed Versions
+
+<details>
+
+commit                : 69f03a39ecf654e23490cc6d2e103c5e06ccae18
+python                : 3.10.13.final.0
+python-bits           : 64
+OS                    : Linux
+OS-release            : 6.7.4-2-MANJARO
+Version               : #1 SMP PREEMPT_DYNAMIC Sat Feb 10 09:41:20 UTC 2024
+machine               : x86_64
+processor             : 
+byteorder             : little
+LC_ALL                : None
+LANG                  : en_GB.UTF-8
+LOCALE                : en_GB.UTF-8
+
+pandas                : 3.0.0.dev0+448.g69f03a39ec
+numpy                 : 1.26.4
+pytz                  : 2024.1
+dateutil              : 2.9.0
+setuptools            : 69.1.1
+pip                   : 24.0
+Cython                : 3.0.8
+pytest                : 8.0.2
+hypothesis            : 6.98.15
+sphinx                : 7.2.6
+blosc                 : None
+feather               : None
+xlsxwriter            : 3.1.9
+lxml.etree            : 5.1.0
+html5lib              : 1.1
+pymysql               : 1.4.6
+psycopg2              : 2.9.9
+jinja2                : 3.1.3
+IPython               : 8.22.1
+pandas_datareader     : None
+adbc-driver-postgresql: None
+adbc-driver-sqlite    : None
+bs4                   : 4.12.3
+bottleneck            : 1.3.8
+fastparquet           : 2024.2.0
+fsspec                : 2024.2.0
+gcsfs                 : 2024.2.0
+matplotlib            : 3.8.3
+numba                 : 0.59.0
+numexpr               : 2.9.0
+odfpy                 : None
+openpyxl              : 3.1.2
+pyarrow               : 15.0.0
+pyreadstat            : 1.2.6
+python-calamine       : None
+pyxlsb                : 1.0.10
+s3fs                  : 2024.2.0
+scipy                 : 1.12.0
+sqlalchemy            : 2.0.27
+tables                : 3.9.2
+tabulate              : 0.9.0
+xarray                : 2024.2.0
+xlrd                  : 2.0.1
+zstandard             : 0.22.0
+tzdata                : 2024.1
+qtpy                  : None
+pyqt5                 : None
+
+</details>
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57709/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57709/timeline,,,,
+12,https://api.github.com/repos/pandas-dev/pandas/issues/57706,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57706/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57706/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57706/events,https://github.com/pandas-dev/pandas/pull/57706,2164921519,PR_kwDOAA0YD85ofT-f,57706,BUG: groupby.agg should always agg,"{'login': 'rhshadrach', 'id': 45562402, 'node_id': 'MDQ6VXNlcjQ1NTYyNDAy', 'avatar_url': 'https://avatars.githubusercontent.com/u/45562402?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/rhshadrach', 'html_url': 'https://github.com/rhshadrach', 'followers_url': 'https://api.github.com/users/rhshadrach/followers', 'following_url': 'https://api.github.com/users/rhshadrach/following{/other_user}', 'gists_url': 'https://api.github.com/users/rhshadrach/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/rhshadrach/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/rhshadrach/subscriptions', 'organizations_url': 'https://api.github.com/users/rhshadrach/orgs', 'repos_url': 'https://api.github.com/users/rhshadrach/repos', 'events_url': 'https://api.github.com/users/rhshadrach/events{/privacy}', 'received_events_url': 'https://api.github.com/users/rhshadrach/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76812, 'node_id': 'MDU6TGFiZWw3NjgxMg==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Enhancement', 'name': 'Enhancement', 'color': '4E9A06', 'default': False, 'description': None}, {'id': 233160, 'node_id': 'MDU6TGFiZWwyMzMxNjA=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Groupby', 'name': 'Groupby', 'color': '729FCF', 'default': False, 'description': None}, {'id': 35818298, 'node_id': 'MDU6TGFiZWwzNTgxODI5OA==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/API%20Design', 'name': 'API Design', 'color': 'AD7FA8', 'default': False, 'description': None}, {'id': 219960758, 'node_id': 'MDU6TGFiZWwyMTk5NjA3NTg=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Discussion', 'name': 'Needs Discussion', 'color': '207de5', 'default': False, 'description': 'Requires discussion from core team before further action'}, {'id': 697792067, 'node_id': 'MDU6TGFiZWw2OTc3OTIwNjc=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Apply', 'name': 'Apply', 'color': 'fbca04', 'default': False, 'description': 'Apply, Aggregate, Transform'}]",open,False,,[],"{'url': 'https://api.github.com/repos/pandas-dev/pandas/milestones/102', 'html_url': 'https://github.com/pandas-dev/pandas/milestone/102', 'labels_url': 'https://api.github.com/repos/pandas-dev/pandas/milestones/102/labels', 'id': 9021906, 'node_id': 'MI_kwDOAA0YD84AianS', 'number': 102, 'title': '3.0', 'description': '', 'creator': {'login': 'jbrockmendel', 'id': 8078968, 'node_id': 'MDQ6VXNlcjgwNzg5Njg=', 'avatar_url': 'https://avatars.githubusercontent.com/u/8078968?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/jbrockmendel', 'html_url': 'https://github.com/jbrockmendel', 'followers_url': 'https://api.github.com/users/jbrockmendel/followers', 'following_url': 'https://api.github.com/users/jbrockmendel/following{/other_user}', 'gists_url': 'https://api.github.com/users/jbrockmendel/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/jbrockmendel/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/jbrockmendel/subscriptions', 'organizations_url': 'https://api.github.com/users/jbrockmendel/orgs', 'repos_url': 'https://api.github.com/users/jbrockmendel/repos', 'events_url': 'https://api.github.com/users/jbrockmendel/events{/privacy}', 'received_events_url': 'https://api.github.com/users/jbrockmendel/received_events', 'type': 'User', 'site_admin': False}, 'open_issues': 51, 'closed_issues': 348, 'state': 'open', 'created_at': '2023-02-08T18:16:49Z', 'updated_at': '2024-03-05T02:50:35Z', 'due_on': '2024-04-01T07:00:00Z', 'closed_at': None}",0,2024-03-02T18:33:27Z,2024-03-05T00:47:55Z,,MEMBER,,"- [x] closes #52362
+- [x] closes #44845
+- [x] closes #39920
+- [x] closes #39436
+- [x] closes #39169
+- [x] closes #28570
+- [x] closes #33242 
+- [x] closes #26611
+
+Built on top of #57671; the diff should get better once that's merged. Still plan on splitting part of this up as a precursor (and perhaps multiple).
+
+For the closed issues above, tests here still likely need to be added.
+
+The goal here is to make groupby.agg more consistently handle UDFs. Currently:
+
+ - We sometimes raise if a UDF returns a NumPy ndarray
+ - We sometimes treat non-scalars as transforms
+ - We sometimes fail (non-purposefully) on non-scalars
+ - We sometimes pass the entire group to the UDF rather than column-by-column
+
+My opinion is that we should treat all UDFs as reducers, regardless of what they return. Some alternatives:
+
+ 1. If we detect something as being a non-scalar, try treating it as a transform
+ 2. Raise on anything detected as being a non-scalar
+
+For 1, we will sometimes guess wrong, and transforming isn't something we should be doing in a method called `agg` anyways. For 2, we are restricting what I think are valid use cases for aggregation, e.g. `gb.agg(np.array)` or `gb.agg(list)`.
+
+In implementing this, I ran into two issues:
+
+ - `_aggregate_frame` fails if non-scalars are returned by the UDF, and also passes all of the selected columns as a DataFrame to the UDF. This is called when there is a single grouping and args or kwargs are provided, or when there is a single grouping and passing the UDF each column individually fails with a ValueError(""No objects to concatenate""). This does not seem possible to fix, would be hard to deprecate (could add a new argument or use a `future` option?), and is bad enough behavior that it seems to me we should just rip the band aid here for 3.0.
+ - `Resampler.apply` is an alias for `Resample.agg`, and we do not want to impact `Resampler.apply` with these changes. For this, I kept the old paths through groupby specifically for resampler and plan to properly deprecate the current method and implement apply (by calling groupby's apply) as part of 3.x development. (Ref: #38463)
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57706/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57706/timeline,,,True,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57706', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57706', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57706.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57706.patch', 'merged_at': None}"
+13,https://api.github.com/repos/pandas-dev/pandas/issues/57705,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57705/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57705/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57705/events,https://github.com/pandas-dev/pandas/pull/57705,2164904171,PR_kwDOAA0YD85ofQmH,57705,Cython guard against [c|m|re]alloc failures,"{'login': 'WillAyd', 'id': 609873, 'node_id': 'MDQ6VXNlcjYwOTg3Mw==', 'avatar_url': 'https://avatars.githubusercontent.com/u/609873?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/WillAyd', 'html_url': 'https://github.com/WillAyd', 'followers_url': 'https://api.github.com/users/WillAyd/followers', 'following_url': 'https://api.github.com/users/WillAyd/following{/other_user}', 'gists_url': 'https://api.github.com/users/WillAyd/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/WillAyd/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/WillAyd/subscriptions', 'organizations_url': 'https://api.github.com/users/WillAyd/orgs', 'repos_url': 'https://api.github.com/users/WillAyd/repos', 'events_url': 'https://api.github.com/users/WillAyd/events{/privacy}', 'received_events_url': 'https://api.github.com/users/WillAyd/received_events', 'type': 'User', 'site_admin': False}","[{'id': 211029535, 'node_id': 'MDU6TGFiZWwyMTEwMjk1MzU=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Clean', 'name': 'Clean', 'color': '207de5', 'default': False, 'description': None}]",open,False,,[],,0,2024-03-02T17:42:22Z,2024-03-02T17:44:26Z,,MEMBER,,"Not sure if these are testable but in the case of the system being exhausted for resources these should explicitly throw a MemoryError instead of allow undefined behavior
+
+@MarcoGorelli don't know how difficult it would be but would be cool to have the cython linter catch uses of any low-level allocation function and ensure that a guard against NULL comes thereafter. The only exception I could think of to that rule is if you are immediately returning the result of an malloc and expect the caller to guard against NULL, but we don't have any instances of that in our code base (may also not matter for Cython)","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57705/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57705/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57705', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57705', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57705.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57705.patch', 'merged_at': None}"
+14,https://api.github.com/repos/pandas-dev/pandas/issues/57704,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57704/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57704/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57704/events,https://github.com/pandas-dev/pandas/pull/57704,2164901430,PR_kwDOAA0YD85ofQCU,57704,Hashtable rename struct members,"{'login': 'WillAyd', 'id': 609873, 'node_id': 'MDQ6VXNlcjYwOTg3Mw==', 'avatar_url': 'https://avatars.githubusercontent.com/u/609873?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/WillAyd', 'html_url': 'https://github.com/WillAyd', 'followers_url': 'https://api.github.com/users/WillAyd/followers', 'following_url': 'https://api.github.com/users/WillAyd/following{/other_user}', 'gists_url': 'https://api.github.com/users/WillAyd/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/WillAyd/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/WillAyd/subscriptions', 'organizations_url': 'https://api.github.com/users/WillAyd/orgs', 'repos_url': 'https://api.github.com/users/WillAyd/repos', 'events_url': 'https://api.github.com/users/WillAyd/events{/privacy}', 'received_events_url': 'https://api.github.com/users/WillAyd/received_events', 'type': 'User', 'site_admin': False}","[{'id': 211029535, 'node_id': 'MDU6TGFiZWwyMTEwMjk1MzU=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Clean', 'name': 'Clean', 'color': '207de5', 'default': False, 'description': None}]",open,False,,[],,0,2024-03-02T17:34:06Z,2024-03-02T17:44:16Z,,MEMBER,,Should help with readability,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57704/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57704/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57704', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57704', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57704.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57704.patch', 'merged_at': None}"
+15,https://api.github.com/repos/pandas-dev/pandas/issues/57703,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57703/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57703/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57703/events,https://github.com/pandas-dev/pandas/pull/57703,2164884928,PR_kwDOAA0YD85ofM34,57703,"Nanosecond fixed precision of DatetimeIndex with time zone information, Fix #53473","{'login': 'MarcusJak', 'id': 78412619, 'node_id': 'MDQ6VXNlcjc4NDEyNjE5', 'avatar_url': 'https://avatars.githubusercontent.com/u/78412619?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/MarcusJak', 'html_url': 'https://github.com/MarcusJak', 'followers_url': 'https://api.github.com/users/MarcusJak/followers', 'following_url': 'https://api.github.com/users/MarcusJak/following{/other_user}', 'gists_url': 'https://api.github.com/users/MarcusJak/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/MarcusJak/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/MarcusJak/subscriptions', 'organizations_url': 'https://api.github.com/users/MarcusJak/orgs', 'repos_url': 'https://api.github.com/users/MarcusJak/repos', 'events_url': 'https://api.github.com/users/MarcusJak/events{/privacy}', 'received_events_url': 'https://api.github.com/users/MarcusJak/received_events', 'type': 'User', 'site_admin': False}",[],open,False,,[],,0,2024-03-02T16:45:54Z,2024-03-04T14:01:22Z,,NONE,,"The expected behaviour is now correct from issue #53473 The out->picoseond value wasn't set which ended with a Json error regarding the ns calculations.
+
+- [x] closes #53473
+- [ ] [Tests added and passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#writing-tests) if fixing a bug or adding a new feature
+- [] All [code checks passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#pre-commit).
+- [ ] Added [type annotations](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#type-hints) to new arguments/methods/functions.
+- [ ] Added an entry in the latest `doc/source/whatsnew/vX.X.X.rst` file if fixing a bug or adding a new feature.
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57703/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57703/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57703', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57703', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57703.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57703.patch', 'merged_at': None}"
+16,https://api.github.com/repos/pandas-dev/pandas/issues/57702,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57702/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57702/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57702/events,https://github.com/pandas-dev/pandas/issues/57702,2164619084,I_kwDOAA0YD86BBXdM,57702,BUG: inconsisntent construction results between `pd.array` and `pd.Series` for dtype=str,"{'login': 'koizumihiroo', 'id': 35495924, 'node_id': 'MDQ6VXNlcjM1NDk1OTI0', 'avatar_url': 'https://avatars.githubusercontent.com/u/35495924?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/koizumihiroo', 'html_url': 'https://github.com/koizumihiroo', 'followers_url': 'https://api.github.com/users/koizumihiroo/followers', 'following_url': 'https://api.github.com/users/koizumihiroo/following{/other_user}', 'gists_url': 'https://api.github.com/users/koizumihiroo/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/koizumihiroo/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/koizumihiroo/subscriptions', 'organizations_url': 'https://api.github.com/users/koizumihiroo/orgs', 'repos_url': 'https://api.github.com/users/koizumihiroo/repos', 'events_url': 'https://api.github.com/users/koizumihiroo/events{/privacy}', 'received_events_url': 'https://api.github.com/users/koizumihiroo/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76811, 'node_id': 'MDU6TGFiZWw3NjgxMQ==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Bug', 'name': 'Bug', 'color': 'e10c02', 'default': False, 'description': None}, {'id': 1954720290, 'node_id': 'MDU6TGFiZWwxOTU0NzIwMjkw', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Triage', 'name': 'Needs Triage', 'color': '0052cc', 'default': False, 'description': 'Issue that has not been reviewed by a pandas team member'}]",open,False,,[],,0,2024-03-02T05:56:14Z,2024-03-02T05:56:14Z,,NONE,,"### Pandas version checks
+
+- [X] I have checked that this issue has not already been reported.
+
+- [X] I have confirmed this bug exists on the [latest version](https://pandas.pydata.org/docs/whatsnew/index.html) of pandas.
+
+- [ ] I have confirmed this bug exists on the [main branch](https://pandas.pydata.org/docs/dev/getting_started/install.html#installing-the-development-version-of-pandas) of pandas.
+
+
+### Reproducible Example
+
+```python
+import pandas as pd
+
+pd.array([1, None], dtype=str)
+# <NumpyExtensionArray>
+# ['1', 'None']
+# Length: 2, dtype: str128
+
+pd.Series([1, None], dtype=str)).array
+# <NumpyExtensionArray>
+# ['1', None]
+# Length: 2, dtype: object
+
+pd.DataFrame([1, None], dtype=str)[0].array
+# <NumpyExtensionArray>
+# ['1', None]
+# Length: 2, dtype: object
+```
+
+
+### Issue Description
+
+While pd.Series returns object dtype when including `None` value in data for `dtype=str`, pd.array convert it to `""None""` string value. I am not sure this is intended or already discussed, but seems curious.
+
+As investigating in construction process, `pd.array` pass dtype as is (str) but `pd.Sereis` call (via `lib.ensure_string_array`) dtype as ""object""
+  
+### using `pd.array` 
+```python
+# https://github.com/pandas-dev/pandas/blob/v2.2.1/pandas/core/arrays/numpy_.py#L127
+result = np.asarray(scalars, dtype=dtype)
+```
+
+### using `pd.Sereis`
+```python
+# https://github.com/pandas-dev/pandas/blob/v2.2.1/pandas/core/construction.py#L800-L802
+# lib.ensure_string_array(arr, convert_na_value=False, copy=copy).reshape(shape)
+# https://github.com/pandas-dev/pandas/blob/v2.2.1/pandas/_libs/lib.pyx#L766
+result = np.asarray(arr, dtype=""object"")
+```
+
+### Expected Behavior
+
+Although there might be historical reasons behind this divergent behavior, striving for consistency between pd.array and pd.Series for dtype=str would be more intuitive.
+
+### Installed Versions
+
+<details>
+/tmp/pandas-report/.venv/lib/python3.11/site-packages/_distutils_hack/__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn(""Setuptools is replacing distutils."")
+
+INSTALLED VERSIONS
+------------------
+commit                : bdc79c146c2e32f2cab629be240f01658cfb6cc2
+python                : 3.11.6.final.0
+python-bits           : 64
+OS                    : Linux
+OS-release            : 5.15.133.1-microsoft-standard-WSL2
+Version               : #1 SMP Thu Oct 5 21:02:42 UTC 2023
+machine               : x86_64
+processor             : x86_64
+byteorder             : little
+LC_ALL                : None
+LANG                  : C.UTF-8
+LOCALE                : en_US.UTF-8
+
+pandas                : 2.2.1
+numpy                 : 1.26.4
+pytz                  : 2024.1
+dateutil              : 2.8.2
+setuptools            : 65.5.0
+pip                   : 23.2.1
+Cython                : None
+pytest                : None
+hypothesis            : None
+sphinx                : None
+blosc                 : None
+feather               : None
+xlsxwriter            : None
+lxml.etree            : None
+html5lib              : None
+pymysql               : None
+psycopg2              : None
+jinja2                : 3.1.3
+IPython               : 8.22.1
+pandas_datareader     : None
+adbc-driver-postgresql: None
+adbc-driver-sqlite    : None
+bs4                   : None
+bottleneck            : None
+dataframe-api-compat  : None
+fastparquet           : None
+fsspec                : 2024.2.0
+gcsfs                 : 2024.2.0
+matplotlib            : None
+numba                 : None
+numexpr               : None
+odfpy                 : None
+openpyxl              : None
+pandas_gbq            : None
+pyarrow               : 15.0.0
+pyreadstat            : None
+python-calamine       : None
+pyxlsb                : None
+s3fs                  : None
+scipy                 : None
+sqlalchemy            : 2.0.27
+tables                : None
+tabulate              : None
+xarray                : None
+xlrd                  : None
+zstandard             : None
+tzdata                : 2024.1
+qtpy                  : None
+pyqt5                 : None
+</details>
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57702/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57702/timeline,,,,
+17,https://api.github.com/repos/pandas-dev/pandas/issues/57700,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57700/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57700/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57700/events,https://github.com/pandas-dev/pandas/pull/57700,2164292517,PR_kwDOAA0YD85odRb1,57700,"DEPR: depreecate uppercase units 'MIN', 'MS', 'US', 'NS' in Timedelta and 'to_timedelta'","{'login': 'natmokval', 'id': 91160475, 'node_id': 'MDQ6VXNlcjkxMTYwNDc1', 'avatar_url': 'https://avatars.githubusercontent.com/u/91160475?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/natmokval', 'html_url': 'https://github.com/natmokval', 'followers_url': 'https://api.github.com/users/natmokval/followers', 'following_url': 'https://api.github.com/users/natmokval/following{/other_user}', 'gists_url': 'https://api.github.com/users/natmokval/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/natmokval/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/natmokval/subscriptions', 'organizations_url': 'https://api.github.com/users/natmokval/orgs', 'repos_url': 'https://api.github.com/users/natmokval/repos', 'events_url': 'https://api.github.com/users/natmokval/events{/privacy}', 'received_events_url': 'https://api.github.com/users/natmokval/received_events', 'type': 'User', 'site_admin': False}","[{'id': 49597148, 'node_id': 'MDU6TGFiZWw0OTU5NzE0OA==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Timedelta', 'name': 'Timedelta', 'color': '5319e7', 'default': False, 'description': 'Timedelta data type'}, {'id': 87485152, 'node_id': 'MDU6TGFiZWw4NzQ4NTE1Mg==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Deprecate', 'name': 'Deprecate', 'color': '5319e7', 'default': False, 'description': 'Functionality to remove in pandas'}]",open,False,,[],,0,2024-03-01T22:31:20Z,2024-03-04T13:35:07Z,,CONTRIBUTOR,,"Deprecated uppercase strings “MIN”, “MS”, “US”, “NS” denoting units from the class Timedelta and the method to_timedelta. The reason: for period/offsets these strings are already deprecated. Instead of the uppercase strings we use lowercase: “min”, “ms”, “us”, “ns”.","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57700/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57700/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57700', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57700', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57700.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57700.patch', 'merged_at': None}"
+18,https://api.github.com/repos/pandas-dev/pandas/issues/57699,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57699/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57699/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57699/events,https://github.com/pandas-dev/pandas/pull/57699,2164288391,PR_kwDOAA0YD85odQjK,57699,"DEPR: remove deprecated freqs/abbrevs 'A', 'A-DEC', 'A-JAN', etc.","{'login': 'natmokval', 'id': 91160475, 'node_id': 'MDQ6VXNlcjkxMTYwNDc1', 'avatar_url': 'https://avatars.githubusercontent.com/u/91160475?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/natmokval', 'html_url': 'https://github.com/natmokval', 'followers_url': 'https://api.github.com/users/natmokval/followers', 'following_url': 'https://api.github.com/users/natmokval/following{/other_user}', 'gists_url': 'https://api.github.com/users/natmokval/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/natmokval/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/natmokval/subscriptions', 'organizations_url': 'https://api.github.com/users/natmokval/orgs', 'repos_url': 'https://api.github.com/users/natmokval/repos', 'events_url': 'https://api.github.com/users/natmokval/events{/privacy}', 'received_events_url': 'https://api.github.com/users/natmokval/received_events', 'type': 'User', 'site_admin': False}",[],open,False,,[],,0,2024-03-01T22:26:56Z,2024-03-01T23:00:46Z,,CONTRIBUTOR,,"xref #55252
+
+remove deprecated string 'A', 'A-DEC', etc. denoting timedelta abbreviations and timeseries frequencies
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57699/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57699/timeline,,,True,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57699', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57699', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57699.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57699.patch', 'merged_at': None}"
+19,https://api.github.com/repos/pandas-dev/pandas/issues/57698,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57698/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57698/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57698/events,https://github.com/pandas-dev/pandas/pull/57698,2164178631,PR_kwDOAA0YD85oc4Ba,57698,ENH: Adding `pipe` operations to `pandas.api.typing.Rolling` instances,"{'login': 'jrmylow', 'id': 33999325, 'node_id': 'MDQ6VXNlcjMzOTk5MzI1', 'avatar_url': 'https://avatars.githubusercontent.com/u/33999325?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/jrmylow', 'html_url': 'https://github.com/jrmylow', 'followers_url': 'https://api.github.com/users/jrmylow/followers', 'following_url': 'https://api.github.com/users/jrmylow/following{/other_user}', 'gists_url': 'https://api.github.com/users/jrmylow/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/jrmylow/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/jrmylow/subscriptions', 'organizations_url': 'https://api.github.com/users/jrmylow/orgs', 'repos_url': 'https://api.github.com/users/jrmylow/repos', 'events_url': 'https://api.github.com/users/jrmylow/events{/privacy}', 'received_events_url': 'https://api.github.com/users/jrmylow/received_events', 'type': 'User', 'site_admin': False}",[],open,False,,[],,0,2024-03-01T21:07:38Z,2024-03-02T12:54:18Z,,CONTRIBUTOR,,"- [ ] closes #57076 (Replace xxxx with the GitHub issue number)
+- [ ] [Tests added and passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#writing-tests) if fixing a bug or adding a new feature
+- [ ] All [code checks passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#pre-commit).
+- [ ] Added [type annotations](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#type-hints) to new arguments/methods/functions.
+- [ ] Added an entry in the latest `doc/source/whatsnew/vX.X.X.rst` file if fixing a bug or adding a new feature.","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57698/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57698/timeline,,,True,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57698', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57698', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57698.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57698.patch', 'merged_at': None}"
+20,https://api.github.com/repos/pandas-dev/pandas/issues/57695,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57695/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57695/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57695/events,https://github.com/pandas-dev/pandas/pull/57695,2163958056,PR_kwDOAA0YD85ocHlB,57695,Use memcpy / realloc more effectively in hashtable,"{'login': 'WillAyd', 'id': 609873, 'node_id': 'MDQ6VXNlcjYwOTg3Mw==', 'avatar_url': 'https://avatars.githubusercontent.com/u/609873?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/WillAyd', 'html_url': 'https://github.com/WillAyd', 'followers_url': 'https://api.github.com/users/WillAyd/followers', 'following_url': 'https://api.github.com/users/WillAyd/following{/other_user}', 'gists_url': 'https://api.github.com/users/WillAyd/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/WillAyd/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/WillAyd/subscriptions', 'organizations_url': 'https://api.github.com/users/WillAyd/orgs', 'repos_url': 'https://api.github.com/users/WillAyd/repos', 'events_url': 'https://api.github.com/users/WillAyd/events{/privacy}', 'received_events_url': 'https://api.github.com/users/WillAyd/received_events', 'type': 'User', 'site_admin': False}","[{'id': 8935311, 'node_id': 'MDU6TGFiZWw4OTM1MzEx', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Performance', 'name': 'Performance', 'color': 'a10c02', 'default': False, 'description': 'Memory or execution speed performance'}]",open,False,,[],,1,2024-03-01T18:25:14Z,2024-03-03T16:53:43Z,,MEMBER,,,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57695/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57695/timeline,,,True,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57695', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57695', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57695.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57695.patch', 'merged_at': None}"
+21,https://api.github.com/repos/pandas-dev/pandas/issues/57693,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57693/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57693/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57693/events,https://github.com/pandas-dev/pandas/issues/57693,2163541000,I_kwDOAA0YD86A9QQI,57693,TST: Some Stata test datasets do not match the expected version,"{'login': 'cmjcharlton', 'id': 90400333, 'node_id': 'MDQ6VXNlcjkwNDAwMzMz', 'avatar_url': 'https://avatars.githubusercontent.com/u/90400333?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/cmjcharlton', 'html_url': 'https://github.com/cmjcharlton', 'followers_url': 'https://api.github.com/users/cmjcharlton/followers', 'following_url': 'https://api.github.com/users/cmjcharlton/following{/other_user}', 'gists_url': 'https://api.github.com/users/cmjcharlton/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/cmjcharlton/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/cmjcharlton/subscriptions', 'organizations_url': 'https://api.github.com/users/cmjcharlton/orgs', 'repos_url': 'https://api.github.com/users/cmjcharlton/repos', 'events_url': 'https://api.github.com/users/cmjcharlton/events{/privacy}', 'received_events_url': 'https://api.github.com/users/cmjcharlton/received_events', 'type': 'User', 'site_admin': False}",[],open,False,,[],,0,2024-03-01T14:32:40Z,2024-03-01T14:32:40Z,,NONE,,"A few of the Stata datasets used for testing are not in the format implied by their file names:
+
+- [stata4_114.dta](https://github.com/pandas-dev/pandas/blob/ab2980ba52ae24db72765b3c4ae1d33ac8fad3f5/pandas/tests/io/data/stata/stata4_114.dta) appears to actually be saved in 115 format.
+- [stata9_115.dta](https://github.com/pandas-dev/pandas/blob/ab2980ba52ae24db72765b3c4ae1d33ac8fad3f5/pandas/tests/io/data/stata/stata9_115.dta) appears to actually be saved in 117 format
+- [stata10_115.dta](https://github.com/pandas-dev/pandas/blob/ab2980ba52ae24db72765b3c4ae1d33ac8fad3f5/pandas/tests/io/data/stata/stata10_115.dta) appears to actually be saved in 117 format
+
+This may result in reduced test coverage for the expected versions.","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57693/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57693/timeline,,,,
+22,https://api.github.com/repos/pandas-dev/pandas/issues/57691,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57691/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57691/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57691/events,https://github.com/pandas-dev/pandas/issues/57691,2163397587,I_kwDOAA0YD86A8tPT,57691,ENH: Be able to set dtype before creating a new column,"{'login': 'Chuck321123', 'id': 123987501, 'node_id': 'U_kgDOB2PmLQ', 'avatar_url': 'https://avatars.githubusercontent.com/u/123987501?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/Chuck321123', 'html_url': 'https://github.com/Chuck321123', 'followers_url': 'https://api.github.com/users/Chuck321123/followers', 'following_url': 'https://api.github.com/users/Chuck321123/following{/other_user}', 'gists_url': 'https://api.github.com/users/Chuck321123/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/Chuck321123/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/Chuck321123/subscriptions', 'organizations_url': 'https://api.github.com/users/Chuck321123/orgs', 'repos_url': 'https://api.github.com/users/Chuck321123/repos', 'events_url': 'https://api.github.com/users/Chuck321123/events{/privacy}', 'received_events_url': 'https://api.github.com/users/Chuck321123/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76812, 'node_id': 'MDU6TGFiZWw3NjgxMg==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Enhancement', 'name': 'Enhancement', 'color': '4E9A06', 'default': False, 'description': None}, {'id': 2365504893, 'node_id': 'MDU6TGFiZWwyMzY1NTA0ODkz', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Closing%20Candidate', 'name': 'Closing Candidate', 'color': 'be21f2', 'default': False, 'description': 'May be closeable, needs more eyeballs'}]",open,False,,[],,3,2024-03-01T13:19:54Z,2024-03-04T17:10:39Z,,NONE,,"### Feature Type
+
+- [X] Adding new functionality to pandas
+
+- [X] Changing existing functionality in pandas
+
+- [ ] Removing existing functionality in pandas
+
+
+### Problem Description
+
+So one can do 
+```
+df[""New_Col""] = 0
+df[""New_Col""] = df[""New_Col""].astype(""int8"")
+```
+But its not possible to do 
+```
+df[""New_Col""] = 0.astype(""int8"")
+```
+
+Would be nice to find a solution so one can set dtype before creating a new column.
+
+### Feature Description
+
+See problem descripion
+
+### Alternative Solutions
+
+Se problem description
+
+### Additional Context
+
+_No response_","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57691/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57691/timeline,,,,
+23,https://api.github.com/repos/pandas-dev/pandas/issues/57688,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57688/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57688/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57688/events,https://github.com/pandas-dev/pandas/issues/57688,2162749733,I_kwDOAA0YD86A6PEl,57688,BUILD: require `python-dateutil>=2.9.0`,"{'login': 'bersbersbers', 'id': 12128514, 'node_id': 'MDQ6VXNlcjEyMTI4NTE0', 'avatar_url': 'https://avatars.githubusercontent.com/u/12128514?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/bersbersbers', 'html_url': 'https://github.com/bersbersbers', 'followers_url': 'https://api.github.com/users/bersbersbers/followers', 'following_url': 'https://api.github.com/users/bersbersbers/following{/other_user}', 'gists_url': 'https://api.github.com/users/bersbersbers/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/bersbersbers/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/bersbersbers/subscriptions', 'organizations_url': 'https://api.github.com/users/bersbersbers/orgs', 'repos_url': 'https://api.github.com/users/bersbersbers/repos', 'events_url': 'https://api.github.com/users/bersbersbers/events{/privacy}', 'received_events_url': 'https://api.github.com/users/bersbersbers/received_events', 'type': 'User', 'site_admin': False}","[{'id': 129350, 'node_id': 'MDU6TGFiZWwxMjkzNTA=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Build', 'name': 'Build', 'color': '75507B', 'default': False, 'description': 'Library building on various platforms'}, {'id': 527603109, 'node_id': 'MDU6TGFiZWw1Mjc2MDMxMDk=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Dependencies', 'name': 'Dependencies', 'color': 'd93f0b', 'default': False, 'description': 'Required and optional dependencies'}, {'id': 2365504893, 'node_id': 'MDU6TGFiZWwyMzY1NTA0ODkz', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Closing%20Candidate', 'name': 'Closing Candidate', 'color': 'be21f2', 'default': False, 'description': 'May be closeable, needs more eyeballs'}]",open,False,,[],,2,2024-03-01T07:06:43Z,2024-03-01T22:26:14Z,,NONE,,"### Installation check
+
+- [X] I have read the [installation guide](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html#installing-pandas).
+
+
+### Platform
+
+Any
+
+### Installation Method
+
+pip install
+
+### pandas Version
+
+2.2.1
+
+### Python Version
+
+3.12.2
+
+### Installation Logs
+
+Installing `pandas` installs `python-dateutil`. On Python 3.12, `python-dateutil<2.9.0` issues warnings, compare https://github.com/pandas-dev/pandas/issues/57262. I'd suggest enforcing `python-dateutil>=2.9.0` as a dependency, at least on Python 3.12.","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57688/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57688/timeline,,,,
+24,https://api.github.com/repos/pandas-dev/pandas/issues/57687,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57687/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57687/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57687/events,https://github.com/pandas-dev/pandas/issues/57687,2162222056,I_kwDOAA0YD86A4OPo,57687,"Breaking change in nightly wheels when assigning to `df.values`, no FutureWarning","{'login': 'rossbar', 'id': 1268991, 'node_id': 'MDQ6VXNlcjEyNjg5OTE=', 'avatar_url': 'https://avatars.githubusercontent.com/u/1268991?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/rossbar', 'html_url': 'https://github.com/rossbar', 'followers_url': 'https://api.github.com/users/rossbar/followers', 'following_url': 'https://api.github.com/users/rossbar/following{/other_user}', 'gists_url': 'https://api.github.com/users/rossbar/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/rossbar/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/rossbar/subscriptions', 'organizations_url': 'https://api.github.com/users/rossbar/orgs', 'repos_url': 'https://api.github.com/users/rossbar/repos', 'events_url': 'https://api.github.com/users/rossbar/events{/privacy}', 'received_events_url': 'https://api.github.com/users/rossbar/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76811, 'node_id': 'MDU6TGFiZWw3NjgxMQ==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Bug', 'name': 'Bug', 'color': 'e10c02', 'default': False, 'description': None}, {'id': 1049312478, 'node_id': 'MDU6TGFiZWwxMDQ5MzEyNDc4', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/DataFrame', 'name': 'DataFrame', 'color': '370f77', 'default': False, 'description': 'DataFrame data structure'}, {'id': 2085877452, 'node_id': 'MDU6TGFiZWwyMDg1ODc3NDUy', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Copy%20/%20view%20semantics', 'name': 'Copy / view semantics', 'color': '70e5ca', 'default': False, 'description': ''}, {'id': 2365504893, 'node_id': 'MDU6TGFiZWwyMzY1NTA0ODkz', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Closing%20Candidate', 'name': 'Closing Candidate', 'color': 'be21f2', 'default': False, 'description': 'May be closeable, needs more eyeballs'}]",open,False,,[],,3,2024-02-29T22:42:40Z,2024-03-01T18:05:10Z,,NONE,,"### Pandas version checks
+
+- [X] I have checked that this issue has not already been reported.
+
+- [X] I have confirmed this bug exists on the [latest version](https://pandas.pydata.org/docs/whatsnew/index.html) of pandas.
+
+- [ ] I have confirmed this bug exists on the [main branch](https://pandas.pydata.org/docs/dev/getting_started/install.html#installing-the-development-version-of-pandas) of pandas.
+
+
+### Reproducible Example
+
+```python
+df = pd.DataFrame(np.array([[1.]]), index=[1], columns[1])
+df.values[np.diag_indices_from(df)] *= 2
+```
+
+
+### Issue Description
+
+This is something that popped up in the [networkx tests with the pandas nightly wheels](https://github.com/rossbar/networkx/actions/runs/8034082386/job/21945242713) (cf. [SPEC 4](https://scientific-python.org/specs/spec-0004/)), so I figured we'd raise here for awareness.
+
+There is an instance of in-place assignment to `df.values` in the NX examples that has begun failing with the pandas nightly wheels:
+
+### On latest stable from pypi (2.2.1)
+
+```python
+>>> import numpy as np
+>>> import pandas as pd
+>>> pd.__version__
+'2.2.1'
+>>> df = pd.DataFrame(np.eye(2), index=[1, 2], columns=[1, 2])
+>>> df.values[np.diag_indices_from(df)] *= 2
+>>> df
+     1    2
+1  2.0  0.0
+2  0.0  2.0
+```
+
+### On nightly wheels
+
+```python
+>>> import numpy as np
+>>> import pandas as pd
+>>> pd.__version__
+'3.0.0.dev0+444.gaabc35abe0'
+>>> df = pd.DataFrame(np.eye(2), index=[1, 2], columns=[1, 2])
+>>> df.values[np.diag_indices_from(df)] *= 2
+Traceback (most recent call last)
+   ...
+ValueError: assignment destination is read-only
+```
+
+### Expected Behavior
+
+I assume the actual behavior change is expected as part of pandas-3.0; my goal was to raise awareness that there is no `FutureWarning`/`DeprecationWarning` for the assigning-to-values in the current version of pandas. It may be that this is intentional - if so, please close this issue! FWIW we have caught and fixed [other issues in the NX test suite](https://github.com/networkx/networkx/pull/7209) via deprecation/future warnings.
+
+### Installed Versions
+
+Version info included above. Additional context - I tried the same minimal example with a 2.3 dev nightly wheel (`2.3.0.dev0+34.g0c23e18c73`) and no warnings were raised there either.","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57687/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57687/timeline,,,,
+25,https://api.github.com/repos/pandas-dev/pandas/issues/57684,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57684/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57684/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57684/events,https://github.com/pandas-dev/pandas/pull/57684,2162132671,PR_kwDOAA0YD85oV1zm,57684,CLN: Enforce deprecation of axis=None in DataFrame reductions,"{'login': 'rhshadrach', 'id': 45562402, 'node_id': 'MDQ6VXNlcjQ1NTYyNDAy', 'avatar_url': 'https://avatars.githubusercontent.com/u/45562402?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/rhshadrach', 'html_url': 'https://github.com/rhshadrach', 'followers_url': 'https://api.github.com/users/rhshadrach/followers', 'following_url': 'https://api.github.com/users/rhshadrach/following{/other_user}', 'gists_url': 'https://api.github.com/users/rhshadrach/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/rhshadrach/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/rhshadrach/subscriptions', 'organizations_url': 'https://api.github.com/users/rhshadrach/orgs', 'repos_url': 'https://api.github.com/users/rhshadrach/repos', 'events_url': 'https://api.github.com/users/rhshadrach/events{/privacy}', 'received_events_url': 'https://api.github.com/users/rhshadrach/received_events', 'type': 'User', 'site_admin': False}","[{'id': 211029535, 'node_id': 'MDU6TGFiZWwyMTEwMjk1MzU=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Clean', 'name': 'Clean', 'color': '207de5', 'default': False, 'description': None}, {'id': 1049312478, 'node_id': 'MDU6TGFiZWwxMDQ5MzEyNDc4', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/DataFrame', 'name': 'DataFrame', 'color': '370f77', 'default': False, 'description': 'DataFrame data structure'}, {'id': 2365504383, 'node_id': 'MDU6TGFiZWwyMzY1NTA0Mzgz', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Reduction%20Operations', 'name': 'Reduction Operations', 'color': '547c03', 'default': False, 'description': 'sum, mean, min, max, etc.'}]",open,False,,[],"{'url': 'https://api.github.com/repos/pandas-dev/pandas/milestones/102', 'html_url': 'https://github.com/pandas-dev/pandas/milestone/102', 'labels_url': 'https://api.github.com/repos/pandas-dev/pandas/milestones/102/labels', 'id': 9021906, 'node_id': 'MI_kwDOAA0YD84AianS', 'number': 102, 'title': '3.0', 'description': '', 'creator': {'login': 'jbrockmendel', 'id': 8078968, 'node_id': 'MDQ6VXNlcjgwNzg5Njg=', 'avatar_url': 'https://avatars.githubusercontent.com/u/8078968?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/jbrockmendel', 'html_url': 'https://github.com/jbrockmendel', 'followers_url': 'https://api.github.com/users/jbrockmendel/followers', 'following_url': 'https://api.github.com/users/jbrockmendel/following{/other_user}', 'gists_url': 'https://api.github.com/users/jbrockmendel/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/jbrockmendel/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/jbrockmendel/subscriptions', 'organizations_url': 'https://api.github.com/users/jbrockmendel/orgs', 'repos_url': 'https://api.github.com/users/jbrockmendel/repos', 'events_url': 'https://api.github.com/users/jbrockmendel/events{/privacy}', 'received_events_url': 'https://api.github.com/users/jbrockmendel/received_events', 'type': 'User', 'site_admin': False}, 'open_issues': 51, 'closed_issues': 348, 'state': 'open', 'created_at': '2023-02-08T18:16:49Z', 'updated_at': '2024-03-05T02:50:35Z', 'due_on': '2024-04-01T07:00:00Z', 'closed_at': None}",1,2024-02-29T21:28:18Z,2024-03-05T00:48:47Z,,MEMBER,,"- [ ] closes #xxxx (Replace xxxx with the GitHub issue number)
+- [ ] [Tests added and passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#writing-tests) if fixing a bug or adding a new feature
+- [ ] All [code checks passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#pre-commit).
+- [ ] Added [type annotations](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#type-hints) to new arguments/methods/functions.
+- [ ] Added an entry in the latest `doc/source/whatsnew/vX.X.X.rst` file if fixing a bug or adding a new feature.
+
+Ref: #52042","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57684/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57684/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57684', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57684', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57684.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57684.patch', 'merged_at': None}"
+26,https://api.github.com/repos/pandas-dev/pandas/issues/57683,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57683/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57683/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57683/events,https://github.com/pandas-dev/pandas/pull/57683,2161869188,PR_kwDOAA0YD85oU7ma,57683,wip Remove docstring substitutions,"{'login': 'MarcoGorelli', 'id': 33491632, 'node_id': 'MDQ6VXNlcjMzNDkxNjMy', 'avatar_url': 'https://avatars.githubusercontent.com/u/33491632?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/MarcoGorelli', 'html_url': 'https://github.com/MarcoGorelli', 'followers_url': 'https://api.github.com/users/MarcoGorelli/followers', 'following_url': 'https://api.github.com/users/MarcoGorelli/following{/other_user}', 'gists_url': 'https://api.github.com/users/MarcoGorelli/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/MarcoGorelli/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/MarcoGorelli/subscriptions', 'organizations_url': 'https://api.github.com/users/MarcoGorelli/orgs', 'repos_url': 'https://api.github.com/users/MarcoGorelli/repos', 'events_url': 'https://api.github.com/users/MarcoGorelli/events{/privacy}', 'received_events_url': 'https://api.github.com/users/MarcoGorelli/received_events', 'type': 'User', 'site_admin': False}",[],open,False,,[],,5,2024-02-29T18:37:31Z,2024-03-01T14:26:39Z,,MEMBER,,"- [ ] closes #xxxx (Replace xxxx with the GitHub issue number)
+- [ ] [Tests added and passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#writing-tests) if fixing a bug or adding a new feature
+- [ ] All [code checks passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#pre-commit).
+- [ ] Added [type annotations](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#type-hints) to new arguments/methods/functions.
+- [ ] Added an entry in the latest `doc/source/whatsnew/vX.X.X.rst` file if fixing a bug or adding a new feature.
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57683/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57683/timeline,,,True,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57683', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57683', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57683.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57683.patch', 'merged_at': None}"
+27,https://api.github.com/repos/pandas-dev/pandas/issues/57682,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57682/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57682/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57682/events,https://github.com/pandas-dev/pandas/pull/57682,2161821635,PR_kwDOAA0YD85oUxSj,57682,"DOC: RT03 fix for min,max,mean,meadian,kurt,skew","{'login': 'YashpalAhlawat', 'id': 18135348, 'node_id': 'MDQ6VXNlcjE4MTM1MzQ4', 'avatar_url': 'https://avatars.githubusercontent.com/u/18135348?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/YashpalAhlawat', 'html_url': 'https://github.com/YashpalAhlawat', 'followers_url': 'https://api.github.com/users/YashpalAhlawat/followers', 'following_url': 'https://api.github.com/users/YashpalAhlawat/following{/other_user}', 'gists_url': 'https://api.github.com/users/YashpalAhlawat/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/YashpalAhlawat/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/YashpalAhlawat/subscriptions', 'organizations_url': 'https://api.github.com/users/YashpalAhlawat/orgs', 'repos_url': 'https://api.github.com/users/YashpalAhlawat/repos', 'events_url': 'https://api.github.com/users/YashpalAhlawat/events{/privacy}', 'received_events_url': 'https://api.github.com/users/YashpalAhlawat/received_events', 'type': 'User', 'site_admin': False}","[{'id': 134699, 'node_id': 'MDU6TGFiZWwxMzQ2OTk=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Docs', 'name': 'Docs', 'color': '3465A4', 'default': False, 'description': None}]",open,False,,[],,7,2024-02-29T18:05:43Z,2024-03-03T15:44:50Z,,CONTRIBUTOR,,"This PR will fix RT03 error for min,max,mean,meadian,kurt,skew methods
+
+- [x] xref #57416 
+- [ ] [Tests added and passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#writing-tests) if fixing a bug or adding a new feature
+- [ ] All [code checks passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#pre-commit).
+- [ ] Added [type annotations](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#type-hints) to new arguments/methods/functions.
+- [ ] Added an entry in the latest `doc/source/whatsnew/vX.X.X.rst` file if fixing a bug or adding a new feature.
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57682/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57682/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57682', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57682', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57682.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57682.patch', 'merged_at': None}"
+28,https://api.github.com/repos/pandas-dev/pandas/issues/57681,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57681/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57681/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57681/events,https://github.com/pandas-dev/pandas/issues/57681,2161619894,I_kwDOAA0YD86A17O2,57681,BUG: pandas can't detect matplotlib on nanoserver (works fine on servercore),"{'login': 'robin-deltares', 'id': 118373690, 'node_id': 'U_kgDOBw49Og', 'avatar_url': 'https://avatars.githubusercontent.com/u/118373690?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/robin-deltares', 'html_url': 'https://github.com/robin-deltares', 'followers_url': 'https://api.github.com/users/robin-deltares/followers', 'following_url': 'https://api.github.com/users/robin-deltares/following{/other_user}', 'gists_url': 'https://api.github.com/users/robin-deltares/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/robin-deltares/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/robin-deltares/subscriptions', 'organizations_url': 'https://api.github.com/users/robin-deltares/orgs', 'repos_url': 'https://api.github.com/users/robin-deltares/repos', 'events_url': 'https://api.github.com/users/robin-deltares/events{/privacy}', 'received_events_url': 'https://api.github.com/users/robin-deltares/received_events', 'type': 'User', 'site_admin': False}","[{'id': 76811, 'node_id': 'MDU6TGFiZWw3NjgxMQ==', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Bug', 'name': 'Bug', 'color': 'e10c02', 'default': False, 'description': None}, {'id': 307649777, 'node_id': 'MDU6TGFiZWwzMDc2NDk3Nzc=', 'url': 'https://api.github.com/repos/pandas-dev/pandas/labels/Needs%20Info', 'name': 'Needs Info', 'color': '207de5', 'default': False, 'description': 'Clarification about behavior needed to assess issue'}]",open,False,,[],,1,2024-02-29T16:15:02Z,2024-03-01T03:18:16Z,,NONE,,"### Pandas version checks
+
+- [X] I have checked that this issue has not already been reported.
+
+- [x] I have confirmed this bug exists on the [latest version](https://pandas.pydata.org/docs/whatsnew/index.html) of pandas.
+
+- [X] I have confirmed this bug exists on the [main branch](https://pandas.pydata.org/docs/dev/getting_started/install.html#installing-the-development-version-of-pandas) of pandas.
+
+
+### Reproducible Example
+
+```python
+#FROM mcr.microsoft.com/windows/servercore:ltsc2022
+FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
+
+ADD python C:/python
+RUN setx path ""C:\python;C:\python\scripts;%PATH%""
+RUN python -m pip install matplotlib pandas
+
+<< Then use pandas inside container >>
+```
+
+
+### Issue Description
+
+Build a Docker container using mcr.microsoft.com/windows/nanoserver:ltsc2022 with python (identical behavior with 3.7 and 3.12) and any versions of pandas+matplotlib.
+
+Use pandas library.
+
+File ""C:\python\Lib\site-packages\pandas\plotting\_core.py"", line 1874, in _load_backend
+raise ImportError(
+ImportError: matplotlib is required for plotting when the default backend ""matplotlib"" is selected.
+
+Works fine when running identical code on mcr.microsoft.com/windows/servercore:ltsc2022 Docker container.
+
+### Expected Behavior
+
+Should work with nanoserver too.
+
+### Installed Versions
+
+Tried with many versions of pandas and matplotlib.","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57681/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57681/timeline,,,,
+29,https://api.github.com/repos/pandas-dev/pandas/issues/57680,https://api.github.com/repos/pandas-dev/pandas,https://api.github.com/repos/pandas-dev/pandas/issues/57680/labels{/name},https://api.github.com/repos/pandas-dev/pandas/issues/57680/comments,https://api.github.com/repos/pandas-dev/pandas/issues/57680/events,https://github.com/pandas-dev/pandas/pull/57680,2161516678,PR_kwDOAA0YD85oTuRB,57680,BUG: Subtraction fails with matching index of different name and type (pandas-dev#57524),"{'login': 'Adasjo', 'id': 28790200, 'node_id': 'MDQ6VXNlcjI4NzkwMjAw', 'avatar_url': 'https://avatars.githubusercontent.com/u/28790200?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/Adasjo', 'html_url': 'https://github.com/Adasjo', 'followers_url': 'https://api.github.com/users/Adasjo/followers', 'following_url': 'https://api.github.com/users/Adasjo/following{/other_user}', 'gists_url': 'https://api.github.com/users/Adasjo/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/Adasjo/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/Adasjo/subscriptions', 'organizations_url': 'https://api.github.com/users/Adasjo/orgs', 'repos_url': 'https://api.github.com/users/Adasjo/repos', 'events_url': 'https://api.github.com/users/Adasjo/events{/privacy}', 'received_events_url': 'https://api.github.com/users/Adasjo/received_events', 'type': 'User', 'site_admin': False}",[],open,False,,[],,0,2024-02-29T15:24:23Z,2024-03-04T20:54:15Z,,NONE,,"- [x] closes #57524
+- [x] [Tests added and passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#writing-tests) if fixing a bug or adding a new feature
+- [x] All [code checks passed](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#pre-commit).
+- [ ] Added [type annotations](https://pandas.pydata.org/pandas-docs/dev/development/contributing_codebase.html#type-hints) to new arguments/methods/functions.
+- [x] Added an entry in the latest `doc/source/whatsnew/v3.0.0.rst` file if fixing a bug or adding a new feature.
+","{'url': 'https://api.github.com/repos/pandas-dev/pandas/issues/57680/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}",https://api.github.com/repos/pandas-dev/pandas/issues/57680/timeline,,,False,"{'url': 'https://api.github.com/repos/pandas-dev/pandas/pulls/57680', 'html_url': 'https://github.com/pandas-dev/pandas/pull/57680', 'diff_url': 'https://github.com/pandas-dev/pandas/pull/57680.diff', 'patch_url': 'https://github.com/pandas-dev/pandas/pull/57680.patch', 'merged_at': None}"
